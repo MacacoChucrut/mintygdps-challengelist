@@ -1,21 +1,21 @@
 {
-    "id": 1,
-    "name": "Name",
-    "author": "Publisher",
-    "creators": ["Creator"],
-    "verifier": "Verifier",
+    "id": ,
+    "name": "",
+    "author": "",
+    "creators": [""],
+    "verifier": "",
     "verification": "#",
     "percentToQualify": "100",
-    "difficulty": "Demon",
+    "difficulty": "",
     "records": [
         {
-            "user": "Name",
+            "user": "",
             "link": "#",
             "percent": 100,
             "mobile": false
         },
         {
-            "user": "Name",
+            "user": "",
             "link": "#",
             "percent": 100,
             "mobile": false
