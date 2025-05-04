@@ -1,0 +1,17 @@
+{
+    "id": 2731,
+    "name": "Placehold Challenge",
+    "author": "Gonci",
+    "creators": ["Gonci"],
+    "verifier": "Gonci",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
