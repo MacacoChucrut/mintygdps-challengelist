@@ -1,0 +1,23 @@
+{
+    "id": 2369,
+    "name": "Stivan123s Demise",
+    "author": "Mop",
+    "creators": ["Mop"],
+    "verifier": "Mop",
+    "verification": "https://youtu.be/86hvmfoZtJ4",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "GeometryDash",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        }
+    ]
+}
