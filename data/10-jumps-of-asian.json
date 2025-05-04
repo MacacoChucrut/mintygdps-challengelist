@@ -1,0 +1,23 @@
+{
+    "id": 2324,
+    "name": "10 jumps of ASIAN",
+    "author": "Zceliojunior",
+    "creators": ["Zceliojunior"],
+    "verifier": "Zceliojunior",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Mop",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        }
+    ]
+}
