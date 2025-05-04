@@ -1,0 +1,35 @@
+{
+    "id": 2288,
+    "name": "Syphon",
+    "author": "Anduval",
+    "creators": ["Virek"],
+    "verifier": "Virek",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "KauanValads123",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Dracorex",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Mop",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        }
+    ]
+}
