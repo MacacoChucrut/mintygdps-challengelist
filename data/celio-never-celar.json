@@ -1,0 +1,23 @@
+{
+    "id": 2290,
+    "name": "celio never celar",
+    "author": "MacacoChucrut",
+    "creators": ["MacacoChucrut"],
+    "verifier": "MacacoChucrut",
+    "verification": "https://youtu.be/ocyzS0cfMaU",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "KauanValads123",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Zceliojunior",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        }
+    ]
+}
