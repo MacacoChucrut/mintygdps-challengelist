@@ -1,0 +1,23 @@
+{
+    "id": 2531,
+    "name": "Macacos Worst Nightmare",
+    "author": "Herobrain",
+    "creators": ["Herobrain"],
+    "verifier": "Herobrain",
+    "verification": "https://youtu.be/h3ti2uPAA4g",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "Dact",
+            "link": "https://youtu.be/VG9SO_GDAXU",
+            "percent": 100,
+            "mobile": false
+        },
+          {
+            "user": "MacacoChucrut",
+            "link": "https://youtu.be/9U0ZLii_vsA",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
