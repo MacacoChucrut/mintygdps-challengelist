@@ -1,0 +1,41 @@
+{
+    "id": 2316,
+    "name": "VWC",
+    "author": "GangtasHadow",
+    "creators": ["GangtasHadow"],
+    "verifier": "GangtasHadow",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Dracorex",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Virek",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        },
+        {
+            "user": "Mop",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        },
+        {
+            "user": "Dact",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
