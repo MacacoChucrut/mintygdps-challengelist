@@ -1,0 +1,17 @@
+{
+    "id": 2937,
+    "name": "John Kler",
+    "author": "majin",
+    "creators": ["majin"],
+    "verifier": "majin",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "https://youtu.be/zVu0OGNbdQw",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
