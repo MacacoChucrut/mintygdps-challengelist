@@ -1,0 +1,23 @@
+{
+    "id": 110,
+    "name": "crybalistic",
+    "author": "jose",
+    "creators": ["jose"],
+    "verifier": "jose",
+    "verification": "https://youtu.be/k7MXDAin8Bw",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "WrongBlock",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
