@@ -1,7 +1,7 @@
 import List from './pages/List.js';
 import Leaderboard from './pages/Leaderboard.js';
 import Roulette from './pages/Roulette.js';
-import Cow from './pages/cow.js';
+import Cow from './pages/Cow.js';
 
 export default [
     { path: '/', component: List },
