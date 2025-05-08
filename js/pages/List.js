@@ -91,6 +91,16 @@ export default {
                             </li>
                         </ol>
                     </template>
+                    <h3>Level Rules</h3>
+                    <p>
+                        Levels can last up to 29 seconds.
+                    </p>
+                    <p>
+                        Levels can not be fully spam based.
+                    </p>
+                    <p>
+                        Levels must be harder than the current easiest level on the list.
+                    </p>
                     <h3>Submission Requirements</h3>
                     <p>
                         Cheat indicator is required if a modmenu with the feature is being used.
