@@ -1,0 +1,17 @@
+{
+    "id": 3232,
+    "name": "snowstorm",
+    "author": "ImNotPkpi",
+    "creators": ["ImNotPkpi"],
+    "verifier": "ImNotPkpi",
+    "verification": "https://youtu.be/ncPRwdTFfao?si=kCwBMN5vGr7v_yQ5",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
