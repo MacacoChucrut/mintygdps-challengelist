@@ -1,0 +1,17 @@
+{
+    "id": 2707,
+    "name": "Blue Hell",
+    "author": "PiGuy300",
+    "creators": ["PiGuy300"],
+    "verifier": "PiGuy300",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
