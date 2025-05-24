@@ -1,9 +1,9 @@
 {
-    "id": 0,
+    "id": 532,
     "name": "INSOMNIA CHALLENGE",
     "author": "RightBlock",
     "creators": ["WrongBlock"],
-    "verifier": "q",
+    "verifier": "WrongBlock",
     "verification": "#",
     "percentToQualify": "100",
     "records": [
