@@ -3,15 +3,9 @@
     "name": "Super wave challenge",
     "author": "Anduval",
     "creators": ["Virek"],
-    "verifier": "To be verified by Virek ig",
-    "verification": "#",
+    "verifier": "MacacoChucrut",
+    "verification": "https://youtu.be/T5KT9mSpNSI",
     "percentToQualify": "100",
     "records": [
-        {
-            "user": "MacacoChucrut",
-            "link": "https://youtu.be/T5KT9mSpNSI",
-            "percent": 100,
-            "mobile": false
-        }
     ]
 }
