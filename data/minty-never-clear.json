@@ -1,0 +1,17 @@
+{
+    "id": 1497,
+    "name": "minty never clear",
+    "author": "Simon",
+    "creators": ["Simon"],
+    "verifier": "Simon",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
