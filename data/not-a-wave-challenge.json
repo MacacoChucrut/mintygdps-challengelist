@@ -1,0 +1,35 @@
+{
+    "id": 1739,
+    "name": "Not a wave challenge",
+    "author": "Mop",
+    "creators": ["Mop"],
+    "verifier": "Mop",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "grannyhorror",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Simon",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "iITHENCSFANIi",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        }
+    ]
+}
