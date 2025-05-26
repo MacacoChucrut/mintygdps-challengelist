@@ -1,5 +1,5 @@
 {
-    "id": ,
+    "id": 3179,
     "name": "flawed wings",
     "author": "Z3pH4x",
     "creators": ["Z3pH4x"],
@@ -8,10 +8,10 @@
     "percentToQualify": "100",
     "records": [
         {
-            "user": "",
+            "user": "MacacoChucrut",
             "link": "#",
             "percent": 100,
-            "mobile": 
+            "mobile": false
         }
     ]
 }
