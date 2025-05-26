@@ -1,0 +1,17 @@
+{
+    "id": 2936,
+    "name": "x",
+    "author": "Dracorex",
+    "creators": ["Dracorex"],
+    "verifier": "Dracorex",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ]
+}
