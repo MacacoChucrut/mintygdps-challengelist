@@ -7,5 +7,11 @@
     "verification": "https://youtu.be/X8FQCmriEPs?feature=shared",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "Virek",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
     ]
 }
