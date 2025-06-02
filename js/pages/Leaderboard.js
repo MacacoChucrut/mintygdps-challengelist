@@ -28,14 +28,14 @@ export default {
                     <table class="board">
                         <tr v-for="(ientry, i) in leaderboard">
                             <td class="rank">
-                                <p class="type-label-lg">#{{ i + 1 }}</p>
+                                <p class="type-label-lg" :id="'rank-' + i">#{{ i + 1 }}</p>
                             </td>
                             <td class="total">
-                                <p class="type-label-lg">{{ localize(ientry.total) }}</p>
+                                <p class="type-label-lg" :id="'total-' + i">{{ localize(ientry.total) }}</p>
                             </td>
                             <td class="user" :class="{ 'active': selected == i }">
                                 <button @click="selected = i">
-                                    <span class="type-label-lg">{{ ientry.user }}</span>
+                                    <span class="type-label-lg" :id="'user-' + i">{{ ientry.user }}</span>
                                 </button>
                             </td>
                         </tr>
@@ -109,9 +109,9 @@ export default {
         applyRankEffects() {
             this.$nextTick(() => {
                 const ranks = [
-                    { index: 0, color: '#FFD700', animation: 'breathingGold' },
-                    { index: 1, color: '#C0C0C0', animation: 'breathingSilver' },
-                    { index: 2, color: '#CD7F32', animation: 'breathingBronze' },
+                    { index: 0, color: '#FFD700' },
+                    { index: 1, color: '#C0C0C0' },
+                    { index: 2, color: '#CD7F32' },
                 ];
 
                 for (const { index, color, animation } of ranks) {
@@ -119,9 +119,9 @@ export default {
                     const user = document.querySelector(`#user-${index}`);
                     const total = document.querySelector(`#total-${index}`);
                     if (rank && user && total) {
-                        this.addGlowEffect(rank, color, animation);
-                        this.addGlowEffect(user, color, animation);
-                        this.addGlowEffect(total, color, animation);
+                        this.addGlowEffect(rank, color);
+                        this.addGlowEffect(user, color);
+                        this.addGlowEffect(total, color);
                     }
                 }
             });
