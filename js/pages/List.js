@@ -98,7 +98,7 @@ export default {
                         Levels can not be fully spam based.
                     </p>
                     <p>
-                        Levels must be harder than the current easiest level on the list.
+                    For a level to place, it must be harder than the level placed at #50.
                     </p>
                     <h3>Submission Requirements</h3>
                     <p>
