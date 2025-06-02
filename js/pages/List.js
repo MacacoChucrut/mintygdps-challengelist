@@ -103,6 +103,9 @@ export default {
                     </p>
                     <h3>Submission Requirements</h3>
                     <p>
+                        Video proof is required for Top 20 Challenges.
+                    </p>
+                    <p>
                         Cheat indicator is required if a modmenu with the feature is being used.
                     </p>
                     <p>
