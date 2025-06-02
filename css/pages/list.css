@@ -1,13 +1,19 @@
-.page-list .list-container,
+e.page-list .list-container,
 .page-list .level-container,
 .page-list .meta-container {
     padding-block: 2rem;
 }
 .page-list .list-container {
-    padding-inline: 1rem;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 1);
 }
 .page-list .meta-container {
-    padding-right: 2rem;
+    padding: 2rem;
+    margin: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 1);
 }
 
 .page-list .list {
