@@ -4,7 +4,7 @@
     "author": "Z3pH4x",
     "creators": ["Z3pH4x"],
     "verifier": "Z3pH4x",
-    "verification": "#",
+    "verification": "https://youtu.be/g-jmb2Iq2V0?t=24",
     "percentToQualify": "100",
     "records": [
         {
@@ -34,12 +34,6 @@
         {
             "user": "Herobrain",
             "link": "#",
-            "percent": 100,
-            "mobile": false
-        },
-        {
-            "user": "Z3pH4x",
-            "link": "https://youtu.be/g-jmb2Iq2V0?t=24",
             "percent": 100,
             "mobile": false
         }
