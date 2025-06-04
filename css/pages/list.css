@@ -5,12 +5,12 @@ e.page-list .list-container,
 }
 .page-list .list-container {
     padding: 1rem;
-    margin: 2rem;
+    margin: 10rem;
     border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 1);
 }
 .page-list .meta-container {
-    padding: 10rem;
+    padding: 2rem;
     margin: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 1);
