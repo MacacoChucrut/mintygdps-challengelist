@@ -4,7 +4,7 @@ e.page-list .list-container,
     padding-block: 2rem;
 }
 .page-list .list-container {
-    padding: 1rem;
+    padding: 10rem;
     margin: 2rem;
     border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 1);
@@ -21,7 +21,7 @@ e.page-list .list-container,
 }
 .page-list .list .rank {
     text-align: end;
-    padding-right: 5rem;
+    padding-right: 1rem;
 }
 .page-list .list .level {
     width: 100%;
