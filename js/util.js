@@ -5,8 +5,15 @@ export function getYoutubeIdFromUrl(url) {
     )?.[1] ?? '';
 }
 
-export function embed(video) {
-    return `https://www.youtube.com/embed/${getYoutubeIdFromUrl(video)}`;
+export function embed(url) {
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+        const id = getYoutubeIdFromUrl(url);
+        return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen></iframe>`;
+    } else if (url.includes("medal.tv")) {
+        return `<iframe width="560" height="315" src="${url}" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>`;
+    } else {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">View Video</a>`;
+    }
 }
 
 export function localize(num) {
