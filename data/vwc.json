@@ -55,5 +55,6 @@
             "percent": 100,
             "mobile": false
         }
-    ]
+    ],
+    "tags": ["Robot", "Timings", "Slow-Paced"]
 }
