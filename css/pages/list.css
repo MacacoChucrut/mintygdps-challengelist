@@ -130,7 +130,8 @@ e.page-list .list-container,
     font-family: "Lexend Deca", sans-serif;
     display:block;
     border-radius: 14px;
-    color: white;
-    background-color: #5d5d5d;
+    color: var(--color-on-background);
+    border: 3px solid var(--color-primary);
     padding: 7px;
+    margin-right: 7px;
 }
