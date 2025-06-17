@@ -3,25 +3,5 @@
         "role": "owner",
         "name": "MacacoChucrut",
         "link": "https://www.youtube.com/@thesupersigma727"
-    },
-    {
-        "role": "admin",
-        "name": "None",
-        "link": ""
-    },
-    {
-        "role": "helper",
-        "name": "None",
-        "link": ""
-    },
-    {
-        "role": "trial",
-        "name": "None",
-        "link": ""
-    },
-    {
-        "role": "dev",
-        "name": "None",
-        "link": ""
     }
 ]
