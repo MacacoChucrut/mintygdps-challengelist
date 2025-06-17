@@ -108,7 +108,7 @@ export default {
                         Video proof is required for Top 25 Challenges.
                     </p>
                     <p>
-                        Completions or Verifications Must be uploaded in the format of a youtube video.
+                        Verifications must be uploaded in the format of a youtube video.
                     </p>
                     <p>
                         Cheat indicator is required if a modmenu with the feature is being used.
