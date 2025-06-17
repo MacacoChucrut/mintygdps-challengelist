@@ -105,7 +105,7 @@ export default {
                     </p>
                         <h3>Submission Requirements</h3>
                     <p>
-                        Video proof is required for Top 20 Challenges.
+                        Video proof is required for Top 25 Challenges.
                     </p>
                     <p>
                         Completions or Verifications Must be uploaded in the format of a youtube video.
