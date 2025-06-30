@@ -1,0 +1,18 @@
+{
+    "id": 3444,
+    "name": "I dont have money",
+    "author": "Anduval",
+    "creators": ["Virek", "LeftDpad"],
+    "verifier": "Virek",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ],
+    "tags": ["Wave", "Fast-Paced"]
+}
