@@ -23,7 +23,7 @@ export default {
         <main v-else class="page-list">
             <div class="list-container">
                 <div class="search-wrapper">
-                    <input type="text" v-model="searchQuery" placeholder="Search by level name..." class="search-input type-body-lg">
+                    <input type="text" v-model="searchQuery" placeholder="Search Level..." class="search-input type-body-lg">
                 </div>
                 <table class="list" v-if="list">
                     <tr v-for="item in filteredListDisplay" :key="item.i">
