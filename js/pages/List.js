@@ -58,7 +58,7 @@ export default {
                     <p v-else-if="selected +1 <= 50"><strong>100%</strong> or better to qualify</p>
                     <p v-else>This level has fallen into Legacy and no longer accepts new records.</p>
                     <table class="records">
-                        <tr ="record in level.records" class="record">
+                        <tr v-for="record in level.records" class="record">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
