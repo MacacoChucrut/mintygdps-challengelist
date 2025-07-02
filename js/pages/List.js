@@ -150,13 +150,6 @@ export default {
                     : this.level.verification
             );
         },
-        filteredListDisplay() { //  nuevo filtro
-            if (!this.searchQuery.trim()) return this.list.map(([level, err], i) => ({ level, err, i }));
-            const searchTerm = this.searchQuery.toLowerCase();
-            return this.list
-                .map(([level, err], i) => ({ level, err, i }))
-                .filter(item => item.level?.name?.toLowerCase().includes(searchTerm));
-        },
     },
     async mounted() {
         // Hide loading spinner
