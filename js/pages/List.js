@@ -22,24 +22,18 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-                <div class="search-wrapper">
-                    <input type="text" v-model="searchQuery" placeholder="Search Level..." class="search-input type-body-lg">
-                </div>
                 <table class="list" v-if="list">
-                    <tr v-for="item in filteredListDisplay" :key="item.i">
+                    <tr v-for="([level, err], i) in list">
                         <td class="rank">
-                            <p class="type-label-lg" :style="{ color: item.i + 1 > 50 ? 'darkgrey' : 'inherit' }"> #{{ item.i + 1 }}</p>
+                        <p class="type-label-lg" :style="{ color: i + 1 > 150 ? 'darkgrey' : 'inherit' }"> #{{ i + 1 }}</p>
                         </td>
-                        <td class="level" :class="{ 'active': selected === item.i, 'error': !item.level }">
-                            <button @click="selected = item.i">
-                                <span class="type-label-lg">{{ item.level?.name || \`Error (\${item.err}.json)\` }}</span>
+                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                            <button @click="selected = i">
+                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
                         </td>
                     </tr>
                 </table>
-                <p v-if="list.length > 0 && filteredListDisplay.length === 0" class="no-results type-body-lg">
-                    No levels found matching your search.
-                </p>
             </div>
             <div class="level-container">
                 <div class="level" v-if="level">
@@ -139,8 +133,7 @@ export default {
         selected: 0,
         errors: [],
         roleIconMap,
-        store,
-        searchQuery: '',
+        store
     }),
     computed: {
         level() {
