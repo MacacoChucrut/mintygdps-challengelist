@@ -40,7 +40,7 @@ export default {
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <div style="display:flex">
-                        <div ="tag in level.tags" class="tag">{{tag}}</div>
+                        <div v-for="tag in level.tags" class="tag">{{tag}}</div>
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
