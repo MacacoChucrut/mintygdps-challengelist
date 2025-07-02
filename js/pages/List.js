@@ -40,7 +40,7 @@ export default {
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <div style="display:flex">
-                        <div v-for="tag in level.tags" class="tag">{{tag}}</div>
+                        <div ="tag in level.tags" class="tag">{{tag}}</div>
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
@@ -58,7 +58,7 @@ export default {
                     <p v-else-if="selected +1 <= 50"><strong>100%</strong> or better to qualify</p>
                     <p v-else>This level has fallen into Legacy and no longer accepts new records.</p>
                     <table class="records">
-                        <tr v-for="record in level.records" class="record">
+                        <tr ="record in level.records" class="record">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
@@ -78,7 +78,7 @@ export default {
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
-                        <p class="error" v-for="error of errors">{{ error }}</p>
+                        <p class="error" ="error of errors">{{ error }}</p>
                     </div>
                     <div class="og">
                         <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
@@ -86,7 +86,7 @@ export default {
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
-                            <li v-for="editor in editors">
+                            <li ="editor in editors">
                                 <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
                                 <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
                                 <p v-else>{{ editor.name }}</p>
@@ -133,7 +133,8 @@ export default {
         selected: 0,
         errors: [],
         roleIconMap,
-        store
+        store,
+        searchQuery: '',
     }),
     computed: {
         level() {
@@ -149,6 +150,13 @@ export default {
                     ? this.level.showcase
                     : this.level.verification
             );
+        },
+        filteredListDisplay() { //  nuevo filtro
+            if (!this.searchQuery.trim()) return this.list.map(([level, err], i) => ({ level, err, i }));
+            const searchTerm = this.searchQuery.toLowerCase();
+            return this.list
+                .map(([level, err], i) => ({ level, err, i }))
+                .filter(item => item.level?.name?.toLowerCase().includes(searchTerm));
         },
     },
     async mounted() {
