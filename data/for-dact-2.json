@@ -1,0 +1,23 @@
+{
+    "id": 2875,
+    "name": "for dact 2",
+    "creators": ["yeeee"],
+    "verifier": "Dact",
+    "verification": "#",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "Herobrain",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ],
+    "tags": ["Wave", "Slow-Paced"]
+}
