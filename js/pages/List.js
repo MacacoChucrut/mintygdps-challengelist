@@ -25,7 +25,7 @@ export default {
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
-                        <p class="type-label-lg" :style="{ color: i + 1 > 50 ? 'darkgrey' : 'inherit' }"> #{{ i + 1 }}</p>
+                        <p class="type-label-lg" :style="{ color: i + 1 > 60 ? 'darkgrey' : 'inherit' }"> #{{ i + 1 }}</p>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
@@ -54,7 +54,7 @@ export default {
                         </li>
                     </ul>
                     <h2>Victors</h2>
-                    <p v-if="selected + 1 > 50">This level has fallen into the Legacy List and no longer accepts new records.</p>
+                    <p v-if="selected + 1 > 60">This level has fallen into the Legacy List and no longer accepts new records.</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
