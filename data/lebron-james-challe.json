@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/zYONLosvF_c",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "Virek",
+            "link": "#",
+            "percent": 100,
+            "mobile": true
+        }
     ],
     "tags": ["Ball", "Gimmicky"]
 }
