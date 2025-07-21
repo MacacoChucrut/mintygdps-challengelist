@@ -112,6 +112,9 @@ export default {
                         Cheat indicator is required if a modmenu with the feature is being used.
                     </p>
                     <p>
+                        Do not use secret ways or bug routes. You must complete the level in the intended way.
+                    </p>
+                    <p>
                         The level complete endscreen must be shown.
                     </p>
                     <p>
