@@ -4,6 +4,7 @@
     "creators": ["majin"],
     "verifier": "majin",
     "verification": "https://youtu.be/LwAoPp71cHw",
+    "percentToQualify": "100",
     "records": [
         {
             "user": "MacacoChucrut",
