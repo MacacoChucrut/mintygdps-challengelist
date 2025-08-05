@@ -49,10 +49,6 @@ export default {
                             <div class="type-title-sm">ID</div>
                             <p>{{ selectedPackLevels[selectedLevel][0].level.id }}</p>
                         </li>
-                        <li>
-                            <div class="type-title-sm">Password</div>
-                            <p>{{ selectedPackLevels[selectedLevel][0].level.password || 'Free to Copy' }}</p>
-                        </li>
                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 150"><strong>{{ selectedPackLevels[selectedLevel][0].level.percentToQualify }}%</strong> or better to qualify</p>
@@ -68,9 +64,6 @@ export default {
                             <td class="mobile">
                                 <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store?.dark ? '-dark' : ''}.svg\`" alt="Mobile">
                             </td>
-                            <td class="hz">
-                                <p>{{ record.hz }}Hz</p>
-                            </td>
                         </tr>
                     </table>
                 </div>
@@ -83,13 +76,13 @@ export default {
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
-                    <h3>About the packs</h3>
+                    <h3>About Packs</h3>
                     <p>
-                        These are list packs all chosen by the staff team that you can beat levels for and get the packs attached to your profile
+                        These are List Packs, they are often chosen by the List staff team.
                     </p>
                     <h3>How can I get these packs?</h3>
                     <p>
-                        It's as simple as just beating the levels and getting your records added! The packs will automatically appear on your profile when all levels have been completed
+                        Beat all levels from a pack and get your records added! The packs will automatically appear on your profile.
                     </p>
                 </div>
             </div>
@@ -150,4 +143,5 @@ export default {
         embed,
         getFontColour,
     },
+
 };
