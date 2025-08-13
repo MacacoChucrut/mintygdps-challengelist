@@ -131,7 +131,7 @@
     font-family: "Lexend Deca", sans-serif;
     display:block;
     border-radius: 14px;
-    color: var(--color-on-background);
+    color: #1c1c1c;
     border: 3px solid var(--color-primary);
     padding: 7px;
     margin-right: 7px;
