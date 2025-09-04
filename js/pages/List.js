@@ -118,10 +118,7 @@ export default {
                         The level complete endscreen must be shown.
                     </p>
                     <p>
-                        Physics Bypass is NOT allowed.
-                    </p>
-                    <p>
-                        CBF and FPS/TPS bypass are allowed.
+                        Click Between Frames FPS/TPS bypass are allowed, however, Physics bypass is NOT allowed. 
                     </p>
                 </div>
             </div>
