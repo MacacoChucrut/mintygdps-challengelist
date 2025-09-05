@@ -1,7 +1,6 @@
 {
     "id": 2285,
     "name": "symmcor",
-    "author": "Dracorex",
     "creators": ["Dracorex"],
     "verifier": "Dracorex",
     "verification": "https://youtu.be/s656tZfKex0?feature=shared",
@@ -24,6 +23,12 @@
             "link": "#",
             "percent": 100,
             "mobile": false
+        },
+        {
+            "user": "Mop",
+            "link": "https://youtu.be/Zl19GAssI9E?si=W3cezlDfZTelCI6o",
+            "percent": 100,
+            "mobile": true
         }
     ],
     "tags": ["Wave"]
