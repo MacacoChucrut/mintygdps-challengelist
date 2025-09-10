@@ -3,5 +3,10 @@
         "role": "owner",
         "name": "MacacoChucrut",
         "link": "https://www.youtube.com/@thesupersigma727"
+    },
+    {
+        "role": "admin",
+        "name": "majin",
+        "link": "https://www.youtube.com/@mmmajin"
     }
 ]
