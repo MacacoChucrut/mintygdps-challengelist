@@ -2,10 +2,16 @@
     "id": 3712,
     "name": "Dark Slaughter",
     "creators": ["Gemstone"],
-    "verifier": "Gemstone",
+    "verifier": "Emerald",
     "verification": "#",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "Gemstone",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
         {
             "user": "MacacoChucrut",
             "link": "#",
