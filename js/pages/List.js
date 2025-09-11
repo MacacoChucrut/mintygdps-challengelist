@@ -99,7 +99,7 @@ export default {
                         Levels can not be fully spam based.
                     </p>
                     <p>
-                        For a level to place, it must be harder than the level placed at #60.
+                        For a level to place, it must be harder than the level placed at #75.
                     </p>
                         <h3>Submission Requirements</h3>
                     <p>
