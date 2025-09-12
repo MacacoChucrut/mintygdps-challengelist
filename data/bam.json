@@ -1,0 +1,23 @@
+{
+    "id": 3354,
+    "name": "bam",
+    "creators": ["Z3pH4x"],
+    "verifier": "Z3pH4x",
+    "verification": "https://youtu.be/HUYo1g2KkXA",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "Herobrain",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "MacacoChucrut",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
+    ],
+    "tags": ["Wave", "High CPS", "Slow-Paced"]
+}
