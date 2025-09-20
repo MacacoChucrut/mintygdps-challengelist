@@ -93,10 +93,16 @@ export default {
                     </template>
                     <h3>Level Rules</h3>
                     <p>
-                        Levels can last up to 29 seconds.
+                        The level has to be under 30 seconds when played.
                     </p>
                     <p>
                         For a level to place, it must be harder than the level placed at #75.
+                    </p>
+                    <p>
+                        Anything using the random trigger must not notably affect the gameplay or visual difficulty.
+                    </p>
+                    <p>
+                        If the challenge copies parts from a full level, it must be sufficiently different from the original.
                     </p>
                         <h3>Submission Requirements</h3>
                     <p>
@@ -109,10 +115,13 @@ export default {
                         Cheat indicator is required if a modmenu with the feature is being used.
                     </p>
                     <p>
-                        Do not use secret ways or bug routes. You must complete the level in the intended way.
+                        The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.
                     </p>
                     <p>
-                        The level complete endscreen must be shown.
+                        Do not use major secret routes or bug routes. If you are unsure if a skip is invalid, contact an admin.
+                    </p>
+                    <p>
+                        The recording must show the level complete screen, or the completion will be invalidated.
                     </p>
                     <p>
                         Click Between Frames and FPS/TPS bypass are allowed, however, Physics bypass is NOT allowed. 
