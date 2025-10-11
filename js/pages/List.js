@@ -102,7 +102,7 @@ export default {
                         Anything using the random trigger must not notably affect the gameplay or visual difficulty.
                     </p>
                     <p>
-                        If the challenge copies parts from a full level, it must be sufficiently different from the original.
+                        Copying levels outside the GDPS is NOT allowed. If the challenge copies parts from a GDPS level, it must be sufficiently different from the original.
                     </p>
                         <h3>Submission Requirements</h3>
                     <p>
