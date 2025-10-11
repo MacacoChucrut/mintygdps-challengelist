@@ -104,6 +104,9 @@ export default {
                     <p>
                         Copying levels outside the GDPS is NOT allowed. If the challenge copies parts from a GDPS level, it must be sufficiently different from the original.
                     </p>
+                    <p>
+                        Levels requiring more than 15 clicks per second are not allowed.
+                    </p>
                         <h3>Submission Requirements</h3>
                     <p>
                         Video proof is required for Top 25 Challenges.
