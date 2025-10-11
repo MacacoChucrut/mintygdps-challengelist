@@ -93,13 +93,13 @@ export default {
                     </template>
                     <h3>Level Rules</h3>
                     <p>
-                        The level has to be under 30 seconds when played.
+                        The level has to be under 30 seconds.
                     </p>
                     <p>
                         For a level to place, it must be harder than the level placed at #75.
                     </p>
                     <p>
-                        Anything using the random trigger must not notably affect the gameplay or visual difficulty.
+                        Anything using the Random Trigger must not affect the gameplay or visual difficulty.
                     </p>
                     <p>
                         Copying levels outside the GDPS is NOT allowed. If the challenge copies parts from a GDPS level, it must be sufficiently different from the original.
@@ -121,10 +121,10 @@ export default {
                         The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.
                     </p>
                     <p>
-                        Do not use major secret routes or bug routes. If you are unsure if a skip is invalid, contact an admin.
+                        Do not use major secret ways or bug routes.
                     </p>
                     <p>
-                        The recording must show the level complete screen, or the completion will be invalidated.
+                        The recording must show the level complete screen.
                     </p>
                     <p>
                         Click Between Frames and FPS/TPS bypass are allowed, however, Physics bypass is NOT allowed. 
