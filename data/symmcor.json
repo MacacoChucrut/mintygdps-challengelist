@@ -29,6 +29,12 @@
             "link": "https://youtu.be/Zl19GAssI9E?si=W3cezlDfZTelCI6o",
             "percent": 100,
             "mobile": true
+        },
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/Kvm35Zc5pVw",
+            "percent": 100,
+            "mobile": false
         }
     ],
     "tags": ["Wave"]
