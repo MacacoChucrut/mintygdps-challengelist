@@ -1,12 +1,17 @@
 {
     "id": 2436,
     "name": "macaco chall no way",
-    "author": "MacacoChucrut",
     "creators": ["yeeee"],
     "verifier": "MacacoChucrut",
     "verification": "https://youtu.be/TzHNPZlQw-I?feature=shared",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/sagQHRmd6aU",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["Wave", "High CPS", "Slow-Paced"]
 }
