@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/oBldyYog7Ew",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/KAnjOhLckzk",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["Wave", "High CPS"]
 }
