@@ -102,7 +102,7 @@ export default {
                         Anything using the Random Trigger must not affect the gameplay or visual difficulty.
                     </p>
                     <p>
-                        Copying levels outside the GDPS is NOT allowed. If the challenge copies parts from a GDPS level, it must be sufficiently different from the original.
+                        Copying levels outside the GDPS is NOT allowed.
                     </p>
                     <p>
                         Levels requiring more than 15 clicks per second are not allowed.
