@@ -24,6 +24,12 @@
             "link": "#",
             "percent": 100,
             "mobile": false
+        },
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/SVGbt9slpNU",
+            "percent": 100,
+            "mobile": false
         }
     ],
     "tags": ["Robot", "Timings"]
