@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/H0KB0kV_lbA?feature=shared",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/O2WuwzkUs2w",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["Timings", "Chokepoints", "Slow-Paced"]
 }
