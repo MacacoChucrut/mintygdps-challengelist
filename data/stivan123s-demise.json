@@ -30,6 +30,12 @@
             "link": "#",
             "percent": 100,
             "mobile": false
+        },
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/O-AyryaQ7xQ",
+            "percent": 100,
+            "mobile": false
         }
     ],
     "tags": ["Cube", "Timings"]
