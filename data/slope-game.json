@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/pJb1w-q2FqI",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/qj6nKBkFPqY",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["Wave", "Learny", "Fast-Paced"]
 }
