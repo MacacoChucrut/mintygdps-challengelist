@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/rO1i_FvY0Jw",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/JUO7gp6isks",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["Cube", "Timings", "Slow-Paced", "Former Top 1"]
 }
