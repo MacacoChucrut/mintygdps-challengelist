@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/HMQ3UCxD3Cc?feature=shared",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/gCX6BTZw7J4",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["Wave"]
 }
