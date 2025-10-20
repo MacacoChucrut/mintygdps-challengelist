@@ -1,12 +1,17 @@
 {
     "id": 2328,
     "name": "horse challenge",
-    "author": "MacacoChucrut",
     "creators": ["yeeee"],
     "verifier": "MacacoChucrut",
     "verification": "https://youtu.be/TH2laTboOB8?feature=shared",
     "percentToQualify": "100",
     "records": [
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/zCrJIv-PRbg",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["Wave", "Chokepoints"]
 }
