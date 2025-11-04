@@ -24,11 +24,10 @@
     border-color: var(--color-on-primary);
 }
 .nav .nav__actions {
-    flex: 0.6;
+    flex: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 35px;
 }
 .nav .nav__actions .nav__icon {
     height: 3rem;
