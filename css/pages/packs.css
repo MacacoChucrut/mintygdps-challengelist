@@ -57,18 +57,18 @@ main {
 
 .pack-card {
     background: linear-gradient(145deg, #222228, #1b1b21);
-    border: 2px solid var(--color-primary);
-    border-radius: 1rem;
-    padding: 1rem;
+    border: 3px solid var(--color-primary);
+    border-radius: 14px;
+    padding: 7px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .pack-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .pack-meta h2 {
@@ -145,11 +145,7 @@ main {
     color: var(--color-on-background);
 }
 
-.pack-card:hover .level-item a .level-name {
-    text-shadow: 0 0 4px #00ff00;
-}
-
 .pack-card:hover .level-thumb {
-    transform: scale(1.05);
-    transition: transform 0.2s ease;
+    transform: scale(1.1);
+    transition: transform 0.15s ease;
 }
