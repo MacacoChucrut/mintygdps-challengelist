@@ -13,8 +13,17 @@ export default {
         <main v-else class="page-packs">
             <div class="packs-header">
                 <h1>Packs</h1>
-                <p class="type-label-md" style="color: #aaa">
-                    Collection of themed level packs from the list.
+                <h3>
+                    About Packs
+                </h3>
+                <p>
+                    These level packs are chosen by the list staff team. You will be able to unlock and display these packs directly on your profile.
+                </p>
+                <h3>
+                    How can I obtain these packs?
+                </h3>
+                <p>
+                    You need to beat all the levels in each pack and submit your records for them to be added to the list. Once the completion of all levels has been accepted, the packs will automatically appear on your profile.
                 </p>
             </div>
 
