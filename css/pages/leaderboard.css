@@ -101,8 +101,7 @@
 .page-leaderboard .player .table a:hover {
     text-decoration: underline;
 }
-
-/* Packs completados en el perfil del jugador */
+ /* completed packs on players profile*/
 .page-leaderboard .player .packs-list {
     display: flex;
     flex-wrap: wrap;
@@ -111,25 +110,18 @@
     padding: 0;
     list-style: none;
 }
-
 .page-leaderboard .player .packs-list li {
     font-family: "Lexend Deca", sans-serif;
     display: inline-flex;
     border-radius: 14px;
     color: var(--color-on-primary);
-    /* **CAMBIO AQUÍ: Borde transparente para reservar el espacio.** */
-    border: 3px solid transparent; 
-    /* **CAMBIO AQUÍ: Fondo normal con el color primario.** */
-    background-color: var(--color-primary);
+    border: 3px solid var(--color-primary);
     padding: 7px;
     cursor: default;
     transition: all 0.15s ease;
 }
-
 .page-leaderboard .player .packs-list li:hover {
-    /* **Mantenemos el mismo fondo para evitar el "salto".** */
-    background-color: var(--color-primary); 
-    /* **El efecto de elevación y la sombra se mantienen.** */
+    background-color: var(--color-primary);
     transform: translateY(-2px);
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
+} 
