@@ -134,12 +134,12 @@ export async function fetchLeaderboard() {
             .flat()
             .reduce((prev, cur) => prev + cur.score, 0);
 
-        // ✅ Include both completed and verified levels for packs
+        // Include both completed and verified levels for packs
         const completedLevels = completed.map((l) => l.level);
         const verifiedLevels = verified.map((l) => l.level);
         const allCompletedLevels = [...new Set([...completedLevels, ...verifiedLevels])];
 
-        // --- PACKS REWARD SYSTEM ---
+        // PACKS REWARD SYSTEM
         const packsCompleted = [];
         for (const pack of packs) {
             if (pack.levels.every((lvl) => allCompletedLevels.includes(lvl))) {
