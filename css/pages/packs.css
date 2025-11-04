@@ -123,8 +123,9 @@ main {
     width: 4rem;
     height: 2.25rem;
     object-fit: cover;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     flex-shrink: 0;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3
 }
 
 .level-name {
