@@ -122,7 +122,7 @@
     font-weight: 600;   /* igual a Verified/Completed */
     font-family: inherit; /* hereda la tipografía del resto */
     white-space: nowrap;
-    color: #43a047; /* texto verde */
+    color: var(--color-on-primary);
     border: 2px solid #43a047; /* outline verde */
     background-color: transparent;
     cursor: default;
