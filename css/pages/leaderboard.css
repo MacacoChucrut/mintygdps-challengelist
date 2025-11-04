@@ -105,8 +105,8 @@
 /* Packs completados en el perfil del jugador */
 .page-leaderboard .player .packs-list {
     display: flex;
-    flex-wrap: wrap; /* se ajustan a la siguiente línea si no caben */
-    gap: 0.5rem; /* separación entre packs */
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -116,20 +116,22 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.3rem 0.7rem; /* tamaño de la tarjeta */
-    border-radius: 0.4rem;
-    font-size: 0.85rem;
-    font-weight: 600;
+    padding: 0.4rem 0.8rem; /* tamaño de la etiqueta */
+    border-radius: 0.5rem;
+    font-size: 0.95rem; /* igual a Verified/Completed */
+    font-weight: 600;   /* igual a Verified/Completed */
+    font-family: inherit; /* hereda la tipografía del resto */
     white-space: nowrap;
-    color: #fff;
+    color: #43a047; /* texto verde */
+    border: 2px solid #43a047; /* outline verde */
+    background-color: transparent;
     cursor: default;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: all 0.15s ease;
 }
 
-.page-leaderboard .player .packs-list li:nth-child(5n+5) { background-color: #43a047; }
-
-/* Hover suave para resaltar */
 .page-leaderboard .player .packs-list li:hover {
+    background-color: #43a047; /* relleno verde al pasar el mouse */
+    color: #fff; /* texto blanco */
     transform: translateY(-2px);
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
