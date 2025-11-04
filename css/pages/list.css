@@ -135,4 +135,11 @@
     border: 3px solid var(--color-primary);
     padding: 7px;
     margin-right: 7px;
+    cursor: default;
+    transition: all 0.15s ease;
 }
+.tag li:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+} 
