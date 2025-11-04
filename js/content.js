@@ -1,7 +1,7 @@
 import { round, score } from './score.js';
 
 /**
- * Path to directory containing `_list.json`, all levels, and `packs.json`
+ * Path to directory containing `_list.json`, all levels, and `_packs.json`
  */
 const dir = '/data';
 
@@ -63,10 +63,10 @@ export async function fetchLeaderboard() {
     // Load packs (optional)
     let packs = [];
     try {
-        const res = await fetch(`${dir}/packs.json`);
+        const res = await fetch(`${dir}/_packs.json`);
         if (res.ok) packs = await res.json();
     } catch {
-        console.warn('packs.json not found, skipping pack rewards');
+        console.warn('_packs.json not found, skipping pack rewards');
     }
 
     const scoreMap = {};
@@ -165,8 +165,8 @@ export async function fetchLeaderboard() {
  */
 export async function fetchPacks() {
     try {
-        const res = await fetch(`${dir}/packs.json`);
-        if (!res.ok) throw new Error('Failed to load packs.json');
+        const res = await fetch(`${dir}/_packs.json`);
+        if (!res.ok) throw new Error('Failed to load _packs.json');
         const packs = await res.json();
         return packs;
     } catch (err) {
