@@ -1,14 +1,7 @@
 [
     {
-        "name": "Test Pack (for completions)",
-        "description": "Test description haiiii hewwoo holaaa",
-        "levels": ["botox", "FUCK YOYU", "minty never clear"],
-        "reward": 1000
-    },
-    {
-        "name": "Test Pack (with verifications)",
-        "description": "test desc for a pack with verifications",
-        "levels": ["DISCRETION UNADVISED", "moc", "reverere"],
+        "name": "Spam Pack",
+        "levels": ["bam", "Yay", "lum1"],
         "reward": 1000
     }
 ]
