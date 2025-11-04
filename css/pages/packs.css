@@ -107,6 +107,7 @@ main {
 }
 
 .level-item a {
+    font-family: "Lexend Deca", sans-serif;
     display: flex;
     align-items: center;
     gap: 0.5rem;
