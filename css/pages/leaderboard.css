@@ -112,7 +112,7 @@
 }
 .page-leaderboard .player .packs-list li {
     font-family: "Lexend Deca", sans-serif;
-    display: inline-flex;
+    display: block;
     border-radius: 14px;
     color: var(--color-on-primary);
     border: 3px solid var(--color-primary);
