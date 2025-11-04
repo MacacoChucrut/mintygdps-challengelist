@@ -21,10 +21,6 @@ export default {
             <section class="packs-container">
                 <div class="packs-grid">
                     <div class="pack-card" v-for="(pack, i) in packs" :key="i">
-                        <div class="pack-image">
-                            <img v-if="pack.image" :src="pack.image" :alt="pack.name">
-                            <img v-else src="/assets/placeholder-pack.png" alt="Pack image">
-                        </div>
                         <div class="pack-meta">
                             <h2>{{ pack.name }}</h2>
                             <p class="type-label-sm" style="color: #aaa;">{{ pack.description }}</p>
