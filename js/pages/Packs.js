@@ -78,19 +78,26 @@ export default {
         // Attach level info from list to packs
         this.packs = packs.map(pack => {
             const levelObjects = pack.levels
-                .map(rank => {
-                    const entry = this.list[rank - 1]; // rank is 1-indexed
-                    if (!entry) return null;
-                    const [lvl] = entry;
-                    return {
-                        name: lvl.name,
-                        rank,
-                        id: lvl.id,
-                        video: lvl.verification,
-                        thumbnail: getThumbnailFromId(getYoutubeIdFromUrl(lvl.verification)),
-                    };
-                })
-                .filter(Boolean);
+    .map(ref => {
+        const entry = this.list.find(([lvl]) => 
+            lvl.id === ref || lvl.name.toLowerCase() === String(ref).toLowerCase()
+        );
+
+        if (!entry) {
+            console.warn(`Level not found in list: ${ref}`);
+            return null;
+        }
+
+        const [lvl] = entry;
+        return {
+            name: lvl.name,
+            rank: this.list.indexOf(entry) + 1,
+            id: lvl.id,
+            video: lvl.verification,
+            thumbnail: getThumbnailFromId(getYoutubeIdFromUrl(lvl.verification)),
+        };
+    })
+    .filter(Boolean);
 
             return {
                 ...pack,
