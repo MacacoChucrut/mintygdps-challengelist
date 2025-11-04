@@ -1,0 +1,106 @@
+.page-packs {
+    /* Contenedor principal para la página de Packs */
+    max-width: 80rem; /* Limita el ancho como en la leaderboard */
+    margin: 0 auto; /* Centra el contenido */
+    padding-block: 2rem;
+    padding-inline: 1rem;
+}
+
+.packs-header {
+    /* Estilo para el encabezado de la página */
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.packs-container {
+    /* Contenedor de la sección de la cuadrícula de packs */
+    padding-block: 2rem;
+}
+
+.packs-grid {
+    /* Cuadrícula para mostrar las tarjetas de packs */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Diseños responsivos */
+    gap: 2rem; /* Espacio entre las tarjetas */
+}
+
+.pack-card {
+    /* Estilo de cada tarjeta individual de pack */
+    background-color: var(--color-background-hover); /* Fondo de la tarjeta, similar a .page-roulette .levels .level */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 200px;
+}
+
+.pack-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pack-meta h2 {
+    /* Título del pack */
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--color-on-background);
+    font-size: 1.75rem;
+}
+
+.pack-meta .type-label-sm {
+    /* Descripción del pack */
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.pack-levels h3 {
+    /* Título de la lista de niveles */
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.25rem;
+}
+
+.pack-levels ul {
+    /* Lista de niveles */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.pack-levels li {
+    /* Elemento individual de nivel */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pack-levels a.link {
+    /* Enlace del nivel */
+    color: var(--color-primary); /* Usa el color principal para los enlaces */
+    text-decoration: none;
+    transition: color 0.15s ease;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.pack-levels a.link:hover {
+    color: var(--color-on-background); /* Cambia de color al pasar el mouse */
+    text-decoration: underline;
+}
+
+.pack-reward {
+    /* Recompensa del pack */
+    margin-top: auto; /* Empuja la recompensa hacia la parte inferior */
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #6c5ce7; /* Color destacado para la recompensa, por ejemplo */
+}
