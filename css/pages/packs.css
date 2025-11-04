@@ -125,7 +125,6 @@ main {
     object-fit: cover;
     border-radius: 0.5rem;
     flex-shrink: 0;
-    border: 1px solid var(--color-primary);
 }
 
 .level-name {
@@ -134,6 +133,7 @@ main {
 }
 
 .level-rank {
+    font-family: "Lexend Deca", sans-serif;
     color: #aaa;
     font-size: 0.875rem;
     white-space: nowrap;
