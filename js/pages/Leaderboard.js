@@ -40,12 +40,12 @@ export default {
                         <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
                         <h3>{{ entry.total }}</h3>
 
-                        <!-- ✅ NEW: Packs completed -->
+                        <!-- Packs completed -->
                         <h2 v-if="entry.packsCompleted && entry.packsCompleted.length > 0">
-                            Packs completados ({{ entry.packsCompleted.length }})
+                            Packs Completed ({{ entry.packsCompleted.length }})
                         </h2>
                         <ul v-if="entry.packsCompleted && entry.packsCompleted.length > 0" class="packs-list">
-                            <li v-for="pack in entry.packsCompleted">🏆 {{ pack }}</li>
+                            <li v-for="pack in entry.packsCompleted">• {{ pack }}</li>
                         </ul>
 
                         <h2 v-if="entry.verified.length > 0">Verified ({{ entry.verified.length }})</h2>
