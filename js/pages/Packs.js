@@ -47,15 +47,9 @@ export default {
                 </div>
             </section>
 
-            <div class="meta-container">
-                <div class="meta">
-                    <p class="type-label-md">
-                        Section concept inspired by the <a href="https://matcool.github.io/extreme-demon-roulette/" target="_blank">Extreme Demon Roulette</a> UI.
-                    </p>
-                    <p class="type-label-md">Website layout made by <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a></p>
-                </div>
-            </div>
+        <div class="meta-container"></div>
         </main>
+
     `,
     data: () => ({
         loading: true,
