@@ -116,11 +116,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem 0.8rem; /* tamaño de la etiqueta */
-    border-radius: 0.5rem;
-    font-size: 0.95rem; /* igual a Verified/Completed */
-    font-weight: 600;   /* igual a Verified/Completed */
-    font-family: inherit; /* hereda la tipografía del resto */
+    padding: 7px
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
     white-space: nowrap;
     color: var(--color-on-primary);
     border: 2px solid #43a047; /* outline verde */
