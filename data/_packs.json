@@ -1,7 +1,7 @@
 [
     {
-        "name": "Spam Pack",
+        "name": "Spam Pack I",
         "levels": ["bam", "Yay", "lum1"],
-        "reward": 1000
+        "reward": 100
     }
 ]
