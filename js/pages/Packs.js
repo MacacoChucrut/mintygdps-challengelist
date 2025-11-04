@@ -12,7 +12,6 @@ export default {
         </main>
         <main v-else class="page-packs">
             <div class="packs-header">
-                <h1>Packs</h1>
                 <h3>
                     About Packs
                 </h3>
