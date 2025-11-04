@@ -16,13 +16,13 @@ export default {
                     About Packs
                 </h3>
                 <p>
-                    These level packs are chosen by the list staff team. You will be able to unlock and display these packs directly on your profile.
+                    These packs are picked by the list staff team. You can unlock them by completing all the levels in a pack, and once you do, they’ll show up on your profile.
                 </p>
                 <h3>
                     How can I obtain these packs?
                 </h3>
                 <p>
-                    You need to beat all the levels in each pack and submit your records for them to be added to the list. Once the completion of all levels has been accepted, the packs will automatically appear on your profile.
+                    Just beat every level in a pack and submit your records. Once your completions have been accepted, the pack will automatically appear on your profile.
                 </p>
             </div>
 
