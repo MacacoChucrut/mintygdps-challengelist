@@ -10,4 +10,5 @@
         "description": "test desc for a pack with verifications",
         "levels": ["DISCRETION UNADVISED", "moc", "reverere"],
         "reward": 1000
+    }
 ]
