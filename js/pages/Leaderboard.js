@@ -45,7 +45,7 @@ export default {
                             Packs Completed ({{ entry.packsCompleted.length }})
                         </h2>
                         <ul v-if="entry.packsCompleted && entry.packsCompleted.length > 0" class="packs-list">
-                            <li v-for="pack in entry.packsCompleted">• {{ pack }}</li>
+                            <li v-for="pack in entry.packsCompleted">{{ pack }}</li>
                         </ul>
 
                         <h2 v-if="entry.verified.length > 0">Verified ({{ entry.verified.length }})</h2>
