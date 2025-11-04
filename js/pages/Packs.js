@@ -19,7 +19,7 @@ export default {
                     These packs are picked by the list staff team. You can unlock them by completing all the levels in a pack, and once you do, they’ll show up on your profile.
                 </p>
                 <h3>
-                    How can I obtain these packs?
+                    How do I get these packs?
                 </h3>
                 <p>
                     Just beat every level in a pack and submit your records. Once your completions have been accepted, the pack will automatically appear on your profile.
