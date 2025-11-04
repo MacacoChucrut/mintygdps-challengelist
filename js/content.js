@@ -5,6 +5,9 @@ import { round, score } from './score.js';
  */
 const dir = '/data';
 
+/**
+ * Fetches the main list of levels
+ */
 export async function fetchList() {
     const listResult = await fetch(`${dir}/_list.json`);
     try {
@@ -36,6 +39,9 @@ export async function fetchList() {
     }
 }
 
+/**
+ * Fetches editors data
+ */
 export async function fetchEditors() {
     try {
         const editorsResults = await fetch(`${dir}/_editors.json`);
@@ -46,6 +52,9 @@ export async function fetchEditors() {
     }
 }
 
+/**
+ * Fetches leaderboard data based on list and records
+ */
 export async function fetchLeaderboard() {
     const list = await fetchList();
 
@@ -121,4 +130,19 @@ export async function fetchLeaderboard() {
 
     // Sort by total score
     return [res.sort((a, b) => b.total - a.total), errs];
+}
+
+/**
+ * Fetches packs (custom groupings of levels)
+ */
+export async function fetchPacks() {
+    try {
+        const res = await fetch(`${dir}/packs.json`);
+        if (!res.ok) throw new Error('Failed to load packs.json');
+        const packs = await res.json();
+        return packs;
+    } catch (err) {
+        console.error('Error fetching packs:', err);
+        return [];
+    }
 }
