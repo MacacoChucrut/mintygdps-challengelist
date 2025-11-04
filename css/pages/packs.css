@@ -1,22 +1,16 @@
-/* ================================
-   Fondo global
-   ================================ */
 html,
 body {
     height: 100%;
-    background: linear-gradient(135deg, #17161a, #1f1f25); /* Degradado sutil estilo GD */
+    background: linear-gradient(135deg, #17161a, #1f1f25);
     color: var(--color-on-background);
     margin: 0;
 }
 
 main {
-    background: transparent; /* Para que el degradado se vea en todo el ancho */
+    background: transparent;
     width: 100%;
 }
 
-/* ================================
-   Contenedor principal de la página
-   ================================ */
 .page-packs {
     padding-block: 2rem;
     padding-inline: 2rem;
@@ -27,9 +21,6 @@ main {
     gap: 2rem;
 }
 
-/* ================================
-   Encabezado con información
-   ================================ */
 .packs-header {
     display: flex;
     flex-direction: column;
@@ -52,9 +43,6 @@ main {
     color: var(--color-on-background);
 }
 
-/* ================================
-   Contenedor de packs
-   ================================ */
 .packs-container {
     display: flex;
     flex-direction: column;
@@ -67,11 +55,8 @@ main {
     gap: 1.5rem;
 }
 
-/* ================================
-   Tarjeta de cada pack (estilo GD)
-   ================================ */
 .pack-card {
-    background: linear-gradient(145deg, #222228, #1b1b21); /* Tarjeta con degradado sutil */
+    background: linear-gradient(145deg, #222228, #1b1b21);
     border: 2px solid var(--color-primary);
     border-radius: 1rem;
     padding: 1rem;
@@ -83,12 +68,9 @@ main {
 
 .pack-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.4); /* Glow verde al estilo GD */
+    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.4);
 }
 
-/* ================================
-   Metadatos del pack
-   ================================ */
 .pack-meta h2 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
@@ -102,9 +84,6 @@ main {
     color: #aaa;
 }
 
-/* ================================
-   Sección de niveles dentro del pack
-   ================================ */
 .pack-levels h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -121,9 +100,6 @@ main {
     gap: 0.5rem;
 }
 
-/* ================================
-   Cada nivel con thumbnail
-   ================================ */
 .level-item {
     display: flex;
     justify-content: space-between;
@@ -163,18 +139,12 @@ main {
     white-space: nowrap;
 }
 
-/* ================================
-   Recompensa del pack
-   ================================ */
 .pack-reward {
     margin-top: 1rem;
     font-weight: 500;
     color: var(--color-on-background);
 }
 
-/* ================================
-   Efectos adicionales estilo GD
-   ================================ */
 .pack-card:hover .level-item a .level-name {
     text-shadow: 0 0 4px #00ff00;
 }
