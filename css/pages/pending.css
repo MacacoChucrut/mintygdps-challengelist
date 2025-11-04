@@ -1,3 +1,4 @@
 .page-pending {
-    align: "flex"
+    display: flex;
+    background-color: a;
 }
