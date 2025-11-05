@@ -31,7 +31,7 @@ export default {
                     <div class="pack-card" v-for="(pack, i) in packs" :key="i" 
                         :style="{ borderColor: pack.color }">
                         <div class="pack-meta">
-                            <h2>{{ pack.name }}</h2>
+                            <h2 :style="{ color: pack.color }">{{ pack.name }}</h2>
                             <p class="type-label-sm" style="color: #aaa;">{{ pack.description }}</p>
                             <div class="pack-levels">
                                 <h3>Levels</h3>
