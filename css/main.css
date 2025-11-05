@@ -39,31 +39,21 @@ body {
     background-color: var(--color-background);
 }
 
-/* --- Asegurar que main también tenga fondo oscuro --- */
-header,
-main {
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-    display: grid;
-    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
-            16em,
-            1fr
-        );
-    column-gap: 2rem;
-}
-
+/* --- HEADER --- */
 header {
-    display: flex;
-    padding-inline: calc(10vw - 0rem);
-    height: 4rem;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: calc(10vw - 0rem);
+    height: 4rem;
+    flex-shrink: 0;
 }
 
-@media screen and (min-width: 1366px) {
-    header {
-        display: flex;
-    }
+/* Prevenir salto visual en el header */
+header * {
+    line-height: 1;
 }
 
 header .logo {
@@ -78,12 +68,22 @@ header .nav {
     flex: 1;
 }
 
+@media screen and (min-width: 1366px) {
+    header {
+        display: flex;
+    }
+}
+
+/* --- MAIN --- */
 main {
     flex: 1;
-    display: grid;
-    grid-template-rows: minmax(0, 1fr);
-    column-gap: 2rem;
     background-color: var(--color-background);
+    color: var(--color-on-background);
+    display: grid;
+    grid-template-columns: minmax(16rem, 1fr)
+                           minmax(16rem, 2fr)
+                           minmax(16em, 1fr);
+    column-gap: 2rem;
 }
 
 main > div {
