@@ -1,7 +1,7 @@
 .page-packs {
     background-color: var(--color-background);
     width: 100%;
-    min-height: 100vh;
+    min-height: auto;
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
@@ -76,7 +76,7 @@
     font-weight: 700;
     font-size: 1.3rem;
     color: var(--color-on-background);
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
     border-left: 4px solid var(--pack-color, var(--color-primary));
     padding-left: 0.5rem;
 }
@@ -159,7 +159,7 @@
 
 /* --- pack reward --- */
 .pack-reward {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     font-weight: 500;
     color: var(--color-on-background);
     font-size: 0.95rem;
