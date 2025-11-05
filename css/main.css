@@ -72,7 +72,7 @@ header .nav {
 header .logo {
     display: flex;
     align-items: center;
-    margin-right: 2rem; /* separa el logo del texto "List" */
+    margin-right: 1.3rem; /* separa el logo del texto "List" */
 }
 
 header .logo h2 {
