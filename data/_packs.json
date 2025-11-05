@@ -36,10 +36,10 @@
         "color": "#090"
     },
     {
-        "name": "Jumps of Hell Pack",
+        "name": "Hell Jumps Pack",
         "levels": ["8 Jumps of Blue", "when", "The Fourth Variant"],
         "reward": 450,
-        "color": "#777"
+        "color": "#999"
     },
     {
         "name": "Mop Pack",
