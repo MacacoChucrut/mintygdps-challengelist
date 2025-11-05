@@ -44,7 +44,7 @@ export default {
                                 </ul>
                             </div>
                             <div class="pack-reward" v-if="pack.reward">
-                                <p><strong>Reward:</strong> {{ pack.reward }}</p>
+                                <p><strong>Points when completed:</strong> {{ pack.reward }}</p>
                             </div>
                         </div>
                     </div>
