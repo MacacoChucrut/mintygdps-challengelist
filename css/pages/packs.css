@@ -27,7 +27,7 @@
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--color-on-background);
-    margin: 1rem 0 0.5rem 0; /* margen superior 1rem, margen inferior 0.5rem */
+    margin: 1rem 0 2rem 0; /* margen superior 1rem, margen inferior 0.5rem */
 }
 
 .packs-info p {
@@ -35,7 +35,7 @@
     font-weight: 500;
     line-height: 1.8rem;
     color: var(--color-on-background);
-    margin-bottom: 1.5rem; /* espacio después de cada párrafo */
+    margin-bottom: 2rem; /* espacio después de cada párrafo */
 }
 
 .packs-list {
