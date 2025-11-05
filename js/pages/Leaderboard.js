@@ -50,15 +50,16 @@ export default {
                         <h2 v-if="entry.packsCompleted && entry.packsCompleted.length > 0">
                             Packs Completed ({{ entry.packsCompleted.length }})
                         </h2>
-                        <ul v-if="entry.packsCompleted && entry.packsCompleted.length > 0" class="packs-list">
-                            <li
-                                v-for="pack in entry.packsCompleted"
-                                :key="pack"
-                                :style="getPackStyle(pack)"
-                            >
-                                {{ pack }}
-                            </li>
-                        </ul>
+     <ul v-if="entry.packsCompleted && entry.packsCompleted.length > 0" class="packs-list">
+    <li
+        v-for="pack in entry.packsCompleted"
+        :key="pack.name"
+        class="pack-tag"
+        :style="{ '--pack-color': pack.color || 'var(--color-primary)' }"
+    >
+        {{ pack.name }}
+    </li>
+</ul>
 
                         <h2 v-if="entry.verified.length > 0">Verified ({{ entry.verified.length }})</h2>
                         <table class="table">
