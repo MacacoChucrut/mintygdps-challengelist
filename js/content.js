@@ -56,6 +56,7 @@ export async function fetchEditors() {
  * Fetches leaderboard data based on list and records
  * + Adds pack rewards automatically
  * + Verified levels now count as completed for packs
+ * + Each pack now carries a color property
  */
 export async function fetchLeaderboard() {
     const list = await fetchList();
@@ -139,11 +140,14 @@ export async function fetchLeaderboard() {
         const verifiedLevels = verified.map((l) => l.level);
         const allCompletedLevels = [...new Set([...completedLevels, ...verifiedLevels])];
 
-        // PACKS REWARD SYSTEM
+        // PACKS REWARD SYSTEM (with color)
         const packsCompleted = [];
         for (const pack of packs) {
             if (pack.levels.every((lvl) => allCompletedLevels.includes(lvl))) {
-                packsCompleted.push(pack.name);
+                packsCompleted.push({
+                    name: pack.name,
+                    color: pack.color || 'var(--color-primary)',
+                });
                 if (pack.reward) total += pack.reward;
             }
         }
