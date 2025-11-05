@@ -18,6 +18,12 @@
         "color": "#4b5"
     },
     {
+        "name": "Hell Jumps Pack",
+        "levels": ["8 Jumps of Blue", "when", "The Fourth Variant"],
+        "reward": 450,
+        "color": "#999"
+    },
+    {
         "name": "Herobrain Pack",
         "levels": ["NOT A Wave Challenge (Herobrain)", "CallCoolCellSilly", "Macacos Worst Nightmare"],
         "reward": 300,
@@ -34,12 +40,6 @@
         "levels": ["the sigma variant", "John Kler", "freaky jonkler"],
         "reward": 640,
         "color": "#090"
-    },
-    {
-        "name": "Hell Jumps Pack",
-        "levels": ["8 Jumps of Blue", "when", "The Fourth Variant"],
-        "reward": 450,
-        "color": "#999"
     },
     {
         "name": "Mop Pack",
