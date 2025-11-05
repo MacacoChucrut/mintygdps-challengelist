@@ -17,18 +17,25 @@
 
 /* Texto a la izquierda */
 .packs-info {
-    flex: 1; /* ocupa 1 parte del espacio */
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    /* gap opcional, pero los márgenes harán la separación principal */
 }
 
 .packs-info h3 {
-    margin-bottom: 1rem; /* espacio extra después del título */
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-on-background);
+    margin: 1rem 0 0.5rem 0; /* margen superior 1rem, margen inferior 0.5rem */
 }
 
 .packs-info p {
-    line-height: 3rem; /* hace que cada párrafo tenga más espacio entre líneas */
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--color-on-background);
+    margin-bottom: 1.5rem; /* espacio después de cada párrafo */
 }
 
 .packs-list {
