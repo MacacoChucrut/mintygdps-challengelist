@@ -131,8 +131,8 @@
     transition: color 0.15s ease;
 }
 
-.level-item a:hover {
-    color: var(--color-on-primary);
+.level-item a {
+    color: var(--color-on-background);
 }
 
 /* --- Miniaturas de niveles --- */
