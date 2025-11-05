@@ -58,8 +58,6 @@ header {
     height: 4rem;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
-    align-items: center;
-    line-height: 1;
 }
 
 @media screen and (min-width: 1366px) {
