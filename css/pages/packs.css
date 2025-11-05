@@ -73,8 +73,7 @@
     font-size: 1.3rem;
     color: var(--color-on-background);
     margin-bottom: 1rem;
-    border-left: 4px solid var(--pack-color, var(--color-primary));
-    padding-left: 0.5rem;
+    text-align: center;
 }
 
 .pack-meta .type-label-sm {
