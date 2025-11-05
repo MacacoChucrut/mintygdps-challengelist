@@ -70,9 +70,9 @@
 .pack-meta h2 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--color-on-background);
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
     text-align: center;
 }
 
