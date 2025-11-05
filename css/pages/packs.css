@@ -22,7 +22,6 @@
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--color-on-background);
-    margin-top: 1.5rem;
     text-align: center;
     background-color: transparent;
 }
@@ -35,6 +34,7 @@
     line-height: 1.6rem;
     text-align: center;
     background-color: transparent;
+    margin: 1rem;
 }
 
 .packs-container {
