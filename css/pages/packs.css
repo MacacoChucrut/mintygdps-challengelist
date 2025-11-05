@@ -6,7 +6,7 @@
     padding-inline: 4rem; /* espacio a los lados */
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 /* --- Contenido dividido en dos columnas --- */
