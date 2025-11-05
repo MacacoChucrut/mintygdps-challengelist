@@ -25,7 +25,6 @@ export default {
                     Just beat every level in a pack and submit your records. Once your completions have been accepted, the pack will automatically appear on your profile.
                 </p>
             </div>
-
             <section class="packs-container">
                 <div class="packs-grid">
                     <div class="pack-card" v-for="(pack, i) in packs" :key="i" 
@@ -34,7 +33,6 @@ export default {
                             <h2 :style="{ color: pack.color }">{{ pack.name }}</h2>
                             <p class="type-label-sm" style="color: #aaa;">{{ pack.description }}</p>
                             <div class="pack-levels">
-                                <h3>Levels</h3>
                                 <ul>
                                     <li v-for="level in pack.levelObjects" class="level-item">
                                         <a class="link" :href="level.video" target="_blank">
