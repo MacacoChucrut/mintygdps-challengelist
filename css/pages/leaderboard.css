@@ -109,6 +109,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    color: var(--color-on-primary);
 }
 .page-leaderboard .player .packs-list li {
     font-family: "Lexend Deca", sans-serif;
