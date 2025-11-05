@@ -84,7 +84,7 @@ main {
 }
 
 main > div {
-    overflow-y: auto;
+    overflow-y: visible; /* 👈 deja que crezca naturalmente */
 }
 
 /* --- Spinner --- */
