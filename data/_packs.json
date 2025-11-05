@@ -36,6 +36,12 @@
         "color": "#090"
     },
     {
+        "name": "Jumps of Hell Pack",
+        "levels": ["8 Jumps of Blue", "when", "The Fourth Variant"],
+        "reward": 450,
+        "color": "#777"
+    },
+    {
         "name": "Mop Pack",
         "levels": ["Fridge Challenge", "Help me", "I see"],
         "reward": 120,
