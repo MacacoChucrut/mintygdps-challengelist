@@ -6,7 +6,7 @@
     padding-inline: 4rem; /* espacio a los lados */
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 /* --- Contenido dividido en dos columnas --- */
@@ -20,7 +20,7 @@
     flex: 1; /* ocupa 1 parte del espacio */
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 /* Packs a la derecha */
