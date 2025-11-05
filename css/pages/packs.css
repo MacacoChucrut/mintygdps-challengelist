@@ -52,7 +52,7 @@
 }
 
 .pack-card {
-    background: transparent
+    background: var(--color-background);
     border: 2px solid var(--pack-color, var(--color-primary));
     border-radius: 1rem;
     padding: 1.5rem;
