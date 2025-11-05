@@ -142,7 +142,7 @@
     justify-content: center;
     border-radius: 14px;
     border: 3px solid var(--pack-color, var(--color-primary));
-    background-color: var(--color-background);
+    background-color: transparent;
     color: var(--color-on-background);
     padding: 6px 10px;
     font-weight: 600;
