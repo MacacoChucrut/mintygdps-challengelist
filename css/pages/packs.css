@@ -170,8 +170,3 @@
     font-weight: 500;
     color: var(--color-on-background);
 }
-
-.pack-card:hover .level-thumb {
-    transform: scale(1.1);
-    transition: transform 0.15s ease;
-}
