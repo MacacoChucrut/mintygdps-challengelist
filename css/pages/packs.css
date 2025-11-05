@@ -23,9 +23,16 @@
     gap: 2rem;
 }
 
-/* Packs a la derecha */
+.packs-info h3 {
+    margin-bottom: 0.5rem; /* espacio extra después del título */
+}
+
+.packs-info p {
+    line-height: 1.8rem; /* hace que cada párrafo tenga más espacio entre líneas */
+}
+
 .packs-list {
-    flex: 2; /* ocupa 2 partes del espacio */
+    flex: 2;
     display: flex;
     flex-direction: column;
     gap: 2rem;
