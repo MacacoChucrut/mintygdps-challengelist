@@ -16,7 +16,7 @@
         "levels": ["Razlboy Challenge (Gemstone)", "Macaco Basement (Solo)", "Rizzler Challenge"],
         "reward": 200,
         "color": "#4b5"
-    }
+    },
     {
         "name": "Herobrain Pack",
         "levels": ["NOT A Wave Challenge (Herobrain)", "CallCoolCellSilly", "Macacos Worst Nightmare"],
@@ -46,5 +46,5 @@
         "levels": ["I dont have money", "Syphon", "Back on track"],
         "reward": 120,
         "color": "#67f"
-    },
+    }
 ]
