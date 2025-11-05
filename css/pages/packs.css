@@ -1,96 +1,99 @@
-/* --- Sección Packs --- */
+/* --- Página Packs --- */
 .page-packs {
-    background-color: var(--color-background); /* fondo por defecto de la página */
+    background-color: var(--color-background);
     width: 100%;
-    padding-block: 2rem;
-    padding-inline: 4rem;
+    min-height: 100vh;
+    padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-/* --- Contenido dividido en dos columnas --- */
-.packs-content {
-    display: flex;
-    gap: 2rem;
-}
-
-/* Texto a la izquierda */
-.packs-info {
+/* --- Encabezado de la página --- */
+.packs-header {
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: 1rem;
 }
 
-/* Títulos principales */
-.packs-info h3 {
+.packs-header h3 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--color-on-background);
-    margin: 1.5rem 0 1rem 0;
-    line-height: 2rem;
+    margin-top: 1.5rem;
 }
 
-/* Párrafos */
-.packs-info p {
+.packs-header p {
     font-family: "Lexend Deca", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     color: var(--color-on-background);
-    line-height: 2rem;
-    margin-bottom: 2rem;
+    line-height: 1.6rem;
 }
 
-/* --- Contenedor y Grid de Packs --- */
-.packs-list {
-    flex: 2;
+/* --- Contenedor principal de los packs --- */
+.packs-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
 }
 
 .packs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 80rem;
 }
 
-/* --- Tarjetas de Packs --- */
+/* --- Tarjeta individual del pack --- */
 .pack-card {
-    background: linear-gradient(145deg, #222228, #1b1b21);
-    border: 3px solid var(--color-primary);
-    border-radius: 14px;
-    padding: 1rem;
+    background: linear-gradient(145deg, #1b1b1f, #24242a);
+    border: 2px solid var(--color-primary);
+    border-radius: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .pack-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* --- Meta y Levels --- */
+/* --- Información del pack --- */
 .pack-meta h2 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     color: var(--color-on-background);
+    margin-bottom: 0.25rem;
 }
 
 .pack-meta .type-label-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 0.9rem;
     color: #aaa;
 }
 
+/* --- Sección de niveles --- */
+.pack-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .pack-levels h3 {
-    font-size: 1rem;
+    font-family: "Lexend Deca", sans-serif;
     font-weight: 600;
-    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--color-on-background);
+    margin-bottom: 0.5rem;
 }
 
 .pack-levels ul {
@@ -99,24 +102,32 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    color: #aaa;
+    gap: 0.75rem;
 }
 
+/* --- Nivel individual dentro del pack --- */
 .level-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.15s ease;
 }
 
-/* Enlaces y nombres de niveles */
+.level-item:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
 .level-item a {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-family: "Lexend Deca", sans-serif;
+    gap: 0.75rem;
     text-decoration: none;
     color: var(--color-primary);
+    font-weight: 500;
     transition: color 0.15s ease;
 }
 
@@ -124,39 +135,58 @@
     color: var(--color-on-primary);
 }
 
-/* --- Thumbnail --- */
+/* --- Miniaturas de niveles --- */
 .level-thumb {
-    width: 6rem;
-    height: 3.5rem;
+    width: 5rem;
+    height: 3rem;
     object-fit: cover;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     flex-shrink: 0;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
-    transition: transform 0.15s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .level-name {
     font-family: "Lexend Deca", sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
-.level-rank {
-    color: #aaa;
-    font-weight: 500;
     font-size: 1rem;
-    white-space: nowrap;
-}
-
-.pack-reward {
-    margin-top: 1rem;
-    font-weight: 500;
     color: var(--color-on-background);
 }
 
-/* --- Responsive --- */
+.level-rank {
+    font-size: 0.9rem;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+/* --- Recompensa del pack --- */
+.pack-reward {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: var(--color-on-background);
+    font-size: 0.95rem;
+}
+
+/* --- Responsividad --- */
 @media screen and (max-width: 1024px) {
-    .packs-content {
-        flex-direction: column;
+    .page-packs {
+        padding: 1.5rem;
+    }
+
+    .packs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    }
+
+    .level-thumb {
+        width: 4.5rem;
+        height: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pack-card {
+        padding: 1rem;
+    }
+
+    .pack-meta h2 {
+        font-size: 1.1rem;
     }
 }
