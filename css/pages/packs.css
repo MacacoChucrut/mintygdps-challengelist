@@ -1,15 +1,13 @@
-/* --- Página Packs --- */
 .page-packs {
     background-color: var(--color-background);
     width: 100%;
-    min-height: 100vh; /* 👈 en lugar de 100% */
+    min-height: 100vh;
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-/* --- Encabezado de la página --- */
 .packs-header {
     max-width: 60rem;
     margin: 0 auto;
@@ -39,7 +37,6 @@
     background-color: transparent;
 }
 
-/* --- Contenedor principal de los packs --- */
 .packs-container {
     display: flex;
     flex-direction: column;
@@ -54,7 +51,6 @@
     max-width: 80rem;
 }
 
-/* --- Tarjeta individual del pack --- */
 .pack-card {
     background: linear-gradient(145deg, #1b1b1f, #24242a);
     border: 2px solid var(--pack-color, var(--color-primary));
@@ -70,11 +66,11 @@
     transform: translateY(-4px);
     border-color: var(--pack-color, var(--color-primary));
     box-shadow:
-        0 0 8px 2px var(--pack-color, var(--color-primary)),
-        0 0 16px 4px rgba(0, 0, 0, 0.3);
+        0 0 15px 4px var(--pack-color, var(--color-primary)),
+        0 0 25px 8px color-mix(in srgb, var(--pack-color, var(--color-primary)) 50%, transparent);
 }
 
-/* --- Información del pack --- */
+/* pack info */
 .pack-meta h2 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
@@ -90,7 +86,6 @@
     color: #aaa;
 }
 
-/* --- Sección de niveles --- */
 .pack-levels {
     display: flex;
     flex-direction: column;
@@ -114,7 +109,7 @@
     gap: 0.75rem;
 }
 
-/* --- Nivel individual dentro del pack --- */
+/* each level from a pack */
 .level-item {
     display: flex;
     align-items: center;
@@ -140,7 +135,7 @@
     transition: color 0.15s ease;
 }
 
-/* --- Miniaturas de niveles --- */
+/* --- level thumbnails */
 .level-thumb {
     width: 5rem;
     height: 3rem;
@@ -162,7 +157,7 @@
     white-space: nowrap;
 }
 
-/* --- Recompensa del pack --- */
+/* --- pack reward --- */
 .pack-reward {
     margin-top: 0.5rem;
     font-weight: 500;
@@ -170,7 +165,6 @@
     font-size: 0.95rem;
 }
 
-/* --- Responsividad --- */
 @media screen and (max-width: 1024px) {
     .page-packs {
         padding: 1.5rem;
