@@ -1,4 +1,4 @@
-import { fetchLeaderboard } from '../content.js';
+import { fetchLeaderboard, fetchPacks } from '../content.js';
 import { localize } from '../util.js';
 import Spinner from '../components/Spinner.js';
 
@@ -9,6 +9,7 @@ export default {
         loading: true,
         selected: 0,
         err: [],
+        packs: [], // 🔹 añadimos packs aquí
     }),
     template: `
         <main v-if="loading">
@@ -21,11 +22,16 @@ export default {
                         Leaderboard may be incorrect, as the following levels could not be loaded: {{ err.join(', ') }}
                     </p>
                 </div>
+
                 <div class="board-container">
                     <table class="board">
-                        <tr v-for="(ientry, i) in leaderboard">
-                            <td class="rank"><p class="type-label-lg" :id="'rank-' + i">#{{ i + 1 }}</p></td>
-                            <td class="total"><p class="type-label-lg" :id="'total-' + i">{{ localize(ientry.total) }}</p></td>
+                        <tr v-for="(ientry, i) in leaderboard" :key="i">
+                            <td class="rank">
+                                <p class="type-label-lg" :id="'rank-' + i">#{{ i + 1 }}</p>
+                            </td>
+                            <td class="total">
+                                <p class="type-label-lg" :id="'total-' + i">{{ localize(ientry.total) }}</p>
+                            </td>
                             <td class="user" :class="{ 'active': selected == i }">
                                 <button @click="selected = i">
                                     <span class="type-label-lg" :id="'user-' + i">{{ ientry.user }}</span>
@@ -36,41 +42,55 @@ export default {
                 </div>
 
                 <div class="player-container">
-                    <div class="player">
+                    <div class="player" v-if="entry">
                         <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
                         <h3>{{ entry.total }}</h3>
 
-                        <!-- Packs completed -->
+                        <!-- 🏆 Packs completados con color -->
                         <h2 v-if="entry.packsCompleted && entry.packsCompleted.length > 0">
                             Packs Completed ({{ entry.packsCompleted.length }})
                         </h2>
                         <ul v-if="entry.packsCompleted && entry.packsCompleted.length > 0" class="packs-list">
-                            <li v-for="pack in entry.packsCompleted">{{ pack }}</li>
+                            <li
+                                v-for="pack in entry.packsCompleted"
+                                :key="pack"
+                                :style="getPackStyle(pack)"
+                            >
+                                {{ pack }}
+                            </li>
                         </ul>
 
                         <h2 v-if="entry.verified.length > 0">Verified ({{ entry.verified.length }})</h2>
                         <table class="table">
-                            <tr v-for="score in entry.verified">
+                            <tr v-for="score in entry.verified" :key="score.level">
                                 <td class="rank"><p>#{{ score.rank }}</p></td>
-                                <td class="level"><a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a></td>
+                                <td class="level">
+                                    <a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a>
+                                </td>
                                 <td class="score"><p>+{{ localize(score.score) }}</p></td>
                             </tr>
                         </table>
 
                         <h2 v-if="entry.completed.length > 0">Completed ({{ entry.completed.length }})</h2>
                         <table class="table">
-                            <tr v-for="score in entry.completed">
+                            <tr v-for="score in entry.completed" :key="score.level">
                                 <td class="rank"><p>#{{ score.rank }}</p></td>
-                                <td class="level"><a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a></td>
+                                <td class="level">
+                                    <a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a>
+                                </td>
                                 <td class="score"><p>+{{ localize(score.score) }}</p></td>
                             </tr>
                         </table>
 
                         <h2 v-if="entry.progressed.length > 0">Progressed ({{ entry.progressed.length }})</h2>
                         <table class="table">
-                            <tr v-for="score in entry.progressed">
+                            <tr v-for="score in entry.progressed" :key="score.level">
                                 <td class="rank"><p>#{{ score.rank }}</p></td>
-                                <td class="level"><a class="type-label-lg" target="_blank" :href="score.link">{{ score.percent }}% {{ score.level }}</a></td>
+                                <td class="level">
+                                    <a class="type-label-lg" target="_blank" :href="score.link">
+                                        {{ score.percent }}% {{ score.level }}
+                                    </a>
+                                </td>
                                 <td class="score"><p>+{{ localize(score.score) }}</p></td>
                             </tr>
                         </table>
@@ -85,18 +105,34 @@ export default {
         },
     },
     async mounted() {
+        this.loading = true;
+
+        // 🧮 Cargar leaderboard y packs
         const [leaderboard, err] = await fetchLeaderboard();
-        
-        // 🔒 Filter banned players
         const excludedUsers = ["None", "ribbonera", "Artimae", "KanyeWestOfficial", "Dino"];
         this.leaderboard = leaderboard.filter(player => !excludedUsers.includes(player.user));
-        
         this.err = err;
+
+        try {
+            this.packs = await fetchPacks();
+        } catch {
+            console.warn("No se pudieron cargar los packs para aplicar colores.");
+        }
+
         this.loading = false;
         this.applyRankEffects();
     },
     methods: {
         localize,
+        /**
+         * 🎨 Devuelve estilos CSS para cada pack usando su color definido en _packs.json
+         */
+        getPackStyle(packName) {
+            const pack = this.packs.find(p => p.name === packName);
+            return pack && pack.color
+                ? { '--pack-color': pack.color, borderColor: pack.color }
+                : {};
+        },
         applyRankEffects() {
             this.$nextTick(() => {
                 const ranks = [
@@ -115,6 +151,6 @@ export default {
                     if (total) total.style.color = color;
                 }
             });
-        }
+        },
     },
 };
