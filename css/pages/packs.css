@@ -64,10 +64,8 @@
 
 .pack-card:hover {
     transform: translateY(-4px);
-    border-color: var(--pack-color, var(--color-primary));
     box-shadow:
-        0 0 15px 4px var(--pack-color, var(--color-primary)),
-        0 0 25px 8px color-mix(in srgb, var(--pack-color, var(--color-primary)) 50%, transparent);
+        0 0 25px 8px color-mix(in srgb, var(--pack-color) 50%, transparent);
 }
 
 /* pack info */
@@ -135,7 +133,7 @@
     transition: color 0.15s ease;
 }
 
-/* --- level thumbnails */
+/* level thumbnails */
 .level-thumb {
     width: 5rem;
     height: 3rem;
