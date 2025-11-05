@@ -84,7 +84,8 @@ main {
 }
 
 main > div {
-    overflow-y: visible; /* 👈 deja que crezca naturalmente */
+    overflow-y: visible;
+    background-color: var(--color-background);
 }
 
 /* --- Spinner --- */
