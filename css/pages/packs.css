@@ -53,18 +53,19 @@
 /* --- Tarjeta individual del pack --- */
 .pack-card {
     background: linear-gradient(145deg, #1b1b1f, #24242a);
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--pack-color, var(--color-primary));
     border-radius: 1rem;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .pack-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px 2px color-mix(in srgb, var(--pack-color, var(--color-primary)) 50%, transparent);
+    border-color: var(--pack-color, var(--color-primary));
 }
 
 /* --- Información del pack --- */
@@ -74,6 +75,8 @@
     font-size: 1.3rem;
     color: var(--color-on-background);
     margin-bottom: 0.25rem;
+    border-left: 4px solid var(--pack-color, var(--color-primary));
+    padding-left: 0.5rem;
 }
 
 .pack-meta .type-label-sm {
@@ -126,13 +129,9 @@
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--color-on-background);
     font-weight: 500;
     transition: color 0.15s ease;
-}
-
-.level-item a {
-    color: var(--color-on-background);
 }
 
 /* --- Miniaturas de niveles --- */
