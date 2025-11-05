@@ -1,13 +1,12 @@
 /* --- Sección Packs --- */
 .page-packs {
-    background-color: var(--color-background); /* blanco o gris oscuro según modo */
+    background-color: var(--color-background);
     width: 100%;
     padding-block: 2rem;
     padding-inline: 4rem; /* espacio a los lados */
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-radius: 1rem; /* opcional: efecto “tarjeta” */
 }
 
 /* --- Contenido dividido en dos columnas --- */
