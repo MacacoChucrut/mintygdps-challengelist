@@ -111,7 +111,7 @@ main {
     font-family: "Lexend Deca", sans-serif;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     text-decoration: none;
     color: var(--color-primary);
     transition: color 0.15s ease;
@@ -122,22 +122,25 @@ main {
 }
 
 .level-thumb {
-    width: 4rem;
-    height: 2.25rem;
+    width: 6rem;
+    height: 3.5rem;
     object-fit: cover;
-    border-radius: 0.2rem;
+    border-radius: 0.25rem;
     flex-shrink: 0;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3;
+    transition: transform 0.15 ease;
 }
 
 .level-name {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .level-rank {
     color: #aaa;
-    font-size: 0.875rem;
+    font-weight: 500;
+    font-size: 1rem;
     white-space: nowrap;
 }
 
