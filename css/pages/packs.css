@@ -1,30 +1,30 @@
 /* --- Sección Packs --- */
 .page-packs {
-    background-color: var(--color-background); /* blanco o gris oscuro según modo */
+    background-color: var(--color-background);
     width: 100%;
     padding-block: 2rem;
     padding-inline: 4rem; /* espacio a los lados */
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-radius: 1rem; /* opcional: efecto “tarjeta” */
 }
 
-/* --- Contenido dividido en dos columnas --- */
+/* --- Contenedor de contenido dividido en dos columnas --- */
 .packs-content {
     display: flex;
-    gap: 2rem;
+    gap: 3rem; /* espacio horizontal entre texto y packs */
 }
 
-/* Texto a la izquierda */
+/* --- Texto principal a la izquierda --- */
 .packs-info {
     flex: 1; /* ocupa 1 parte del espacio */
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem; /* mayor separación vertical entre h3 y p */
+    padding-right: 1rem;
 }
 
-/* Packs a la derecha */
+/* --- Packs a la derecha --- */
 .packs-list {
     flex: 2; /* ocupa 2 partes del espacio */
     display: flex;
@@ -32,14 +32,14 @@
     gap: 2rem;
 }
 
-/* Ajustes para pantallas pequeñas */
+/* Responsive: apila verticalmente en pantallas pequeñas */
 @media screen and (max-width: 1024px) {
     .packs-content {
         flex-direction: column;
     }
 }
 
-/* --- Header de Packs --- */
+/* --- Estilos de texto principal --- */
 .packs-info h3 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
@@ -50,7 +50,7 @@
 .packs-info p {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 500;
-    line-height: 1.5rem;
+    line-height: 1.8rem; /* mayor separación entre líneas */
     color: var(--color-on-background);
 }
 
