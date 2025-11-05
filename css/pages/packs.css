@@ -1,5 +1,6 @@
+/* --- Sección Packs --- */
 .page-packs {
-    background-color: var(--color-background); /* respeta modo claro/oscuro */
+    background-color: var(--color-background); /* blanco o gris oscuro según modo */
     padding-block: 2rem;
     padding-inline: 2rem;
     max-width: 80rem;
@@ -7,7 +8,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-radius: 1rem; /* opcional: para estilo de “tarjeta” */
+    border-radius: 1rem; /* opcional: efecto “tarjeta” */
 }
 
 /* --- Header de Packs --- */
@@ -33,7 +34,7 @@
     color: var(--color-on-background);
 }
 
-/* --- Contenedor de Packs --- */
+/* --- Contenedor y Grid de Packs --- */
 .packs-container {
     display: flex;
     flex-direction: column;
@@ -63,7 +64,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* --- Meta de Pack --- */
+/* --- Meta y Levels --- */
 .pack-meta h2 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
@@ -77,22 +78,20 @@
     color: #aaa;
 }
 
-/* --- Levels dentro del pack --- */
 .pack-levels h3 {
     font-size: 1rem;
     font-weight: 600;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0;
 }
 
 .pack-levels ul {
-    color: #aaa;
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    color: #aaa;
 }
 
 .level-item {
@@ -102,10 +101,10 @@
 }
 
 .level-item a {
-    font-family: "Lexend Deca", sans-serif;
     display: flex;
     align-items: center;
-    gap: 1rem; /* espacio entre thumbnail y nombre */
+    gap: 1rem;
+    font-family: "Lexend Deca", sans-serif;
     text-decoration: none;
     color: var(--color-primary);
     transition: color 0.15s ease;
@@ -117,8 +116,8 @@
 
 /* --- Thumbnail --- */
 .level-thumb {
-    width: 6rem; 
-    height: 3.5rem; 
+    width: 6rem;
+    height: 3.5rem;
     object-fit: cover;
     border-radius: 0.25rem;
     flex-shrink: 0;
@@ -126,7 +125,6 @@
     transition: transform 0.15s ease;
 }
 
-/* --- Nombre y rank de niveles --- */
 .level-name {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 500;
@@ -140,14 +138,12 @@
     white-space: nowrap;
 }
 
-/* --- Recompensa del pack --- */
 .pack-reward {
     margin-top: 1rem;
     font-weight: 500;
     color: var(--color-on-background);
 }
 
-/* --- Hover thumbnail efecto zoom --- */
 .pack-card:hover .level-thumb {
     transform: scale(1.1);
     transition: transform 0.15s ease;
