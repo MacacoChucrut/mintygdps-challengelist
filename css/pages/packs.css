@@ -25,6 +25,7 @@
     font-size: 1.5rem;
     color: transparent;
     margin-top: 1.5rem;
+    text-align: center;
 }
 
 .packs-header p {
@@ -33,6 +34,7 @@
     font-size: 1rem;
     color: transparent;
     line-height: 1.6rem;
+    text-align: center;
 }
 
 /* --- Contenedor principal de los packs --- */
