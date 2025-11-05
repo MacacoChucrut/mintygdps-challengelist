@@ -36,7 +36,12 @@ export default {
                                 <ul>
                                     <li v-for="level in pack.levelObjects" class="level-item">
                                         <a class="link" :href="level.video" target="_blank">
-                                            <img :src="level.thumbnail" :alt="level.name" class="level-thumb" />
+                                            <img 
+                                                :src="level.thumbnail" 
+                                                :alt="level.name" 
+                                                class="level-thumb" 
+                                                loading="lazy" 
+                                            />
                                             <span class="level-name">{{ level.name }}</span>
                                         </a>
                                         <span class="level-rank">(#{{ level.rank }})</span>
