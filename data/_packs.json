@@ -48,6 +48,12 @@
         "color": "#c09"
     },
     {
+        "name": "Spam Pack",
+        "levels": ["Yay", "lum1", "DaaaaAAaaAAark"],
+        "reward": 90,
+        "color": "#ce3"
+    },
+    {
         "name": "Virek Pack",
         "levels": ["I dont have money", "Syphon", "Back on track"],
         "reward": 120,
