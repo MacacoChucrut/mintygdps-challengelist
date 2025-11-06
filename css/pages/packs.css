@@ -184,22 +184,3 @@
         font-size: 1.1rem;
     }
 }
-
-/* --- Corregir contraste del encabezado --- */
-.page-packs,
-.page-packs * {
-    color: var(--color-on-background);
-}
-
-/* --- Garantizar que el fondo sea correcto --- */
-.page-packs {
-    background-color: var(--color-background);
-}
-
-/* --- Si sigue sin mostrarse, fuerza color temporal (para probar) --- */
-/*
-.packs-header h3,
-.packs-header p {
-    color: white !important;
-}
-*/
