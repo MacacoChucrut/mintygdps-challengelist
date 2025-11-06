@@ -8,6 +8,7 @@
 }
 
 .packs-header {
+    display: flex;
     max-width: 30rem;
     text-align: left;
     flex-direction: column;
