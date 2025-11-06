@@ -1,7 +1,7 @@
 .page-packs {
     background-color: var(--color-background);
     width: 100%;
-    min-height: auto;
+    min-height: 100%;
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,6 @@
     flex-direction: column;
     gap: 1.25rem;
     transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    margin-bottom: 5rem;
 }
 
 .pack-card:hover {
