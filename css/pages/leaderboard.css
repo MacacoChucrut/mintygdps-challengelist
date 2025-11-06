@@ -13,7 +13,7 @@
 }
 
 .page-leaderboard > div {
-    overflow-y: auto;
+    overflow-y: visible;
 }
 
 .page-leaderboard .error-container {
