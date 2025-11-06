@@ -1,34 +1,40 @@
 .page-packs {
     background-color: var(--color-background);
     width: 100%;
-    height: auto;
+    min-height: auto;
     padding: 2rem 4rem;
     display: flex;
-    gap: 5rem;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .packs-header {
-    max-width: 30rem;
+    max-width: 60rem;
+    margin: 0 auto;
     text-align: left;
+    display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 1rem;
+    gap: 1rem;
 }
 
 .packs-header h3 {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 26px;
+    font-weight: 700;
+    font-size: 1.5rem;
     color: var(--color-on-background);
+    text-align: center;
     background-color: transparent;
 }
 
 .packs-header p {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 1rem;
     color: var(--color-on-background);
     line-height: 1.6rem;
+    text-align: center;
     background-color: transparent;
-    margin: 1rem 0;
+    margin: 1rem;
 }
 
 .packs-container {
