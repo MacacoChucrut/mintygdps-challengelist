@@ -54,11 +54,6 @@ header {
     z-index: 10;
 }
 
-/* Prevenir salto visual en el header */
-header * {
-    line-height: 1;
-}
-
 header .logo {
     justify-self: end;
     align-self: center;
