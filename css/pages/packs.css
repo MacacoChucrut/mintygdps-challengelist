@@ -11,10 +11,11 @@
 }
 
 .packs-header {
+    position: relative;
     max-width: 60rem;
     margin: 0 auto;
     text-align: left;
-    display: flex;
+    display: block;
     flex-direction: column;
     gap: 1rem;
 }
