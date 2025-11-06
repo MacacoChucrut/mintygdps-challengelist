@@ -48,7 +48,6 @@ header {
     justify-content: space-between;
     padding-inline: calc(10vw - 0rem);
     height: 4rem;
-    flex-shrink: 0;
 }
 
 /* Prevenir salto visual en el header */
