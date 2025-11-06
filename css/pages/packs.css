@@ -8,7 +8,7 @@
 }
 
 .packs-header {
-    max-width: 3rem;
+    max-width: 30rem;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,6 @@
 .packs-header h3 {
     font-family: "Lexend Deca", sans-serif;
     font-size: 22.8571428571px;
-    font-weight: 700;
     color: var(--color-on-background);
     background-color: transparent;
 }
@@ -26,7 +25,6 @@
 .packs-header p {
     font-family: "Lexend Deca", sans-serif;
     font-size: 17.1428571429px;
-    font-weight: 400;
     color: var(--color-on-background);
     line-height: 1.6rem;
     background-color: transparent;
