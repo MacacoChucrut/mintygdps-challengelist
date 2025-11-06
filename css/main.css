@@ -40,23 +40,7 @@ body {
     background-color: var(--color-background);
 }
 
-/* --- HEADER --- */
-header {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: calc(10vw - 0rem);
-    height: 4rem;
-    position: relative;
-    z-index: 10;
-}
 
-/* Prevenir salto visual en el header */
-header * {
-    line-height: 1;
-}
 
 header .logo {
     justify-self: end;
@@ -64,6 +48,22 @@ header .logo {
     display: flex;
     align-items: flex-end;
     gap: 1rem;
+}
+
+/* --- Separar el logo del menú principal --- */
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1.3rem; /* separa el logo del texto "List" */
+}
+
+header .logo h2 {
+    margin: 0;
+    padding: 0;
+}
+
+header .nav {
+    flex: 1;
 }
 
 @media screen and (min-width: 1366px) {
