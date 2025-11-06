@@ -74,7 +74,9 @@ main {
     height: 0;
     flex: 1;
     display: grid;
-    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(16rem, 1fr)
+                           minmax(16rem, 2fr)
+                           minmax(16em, 1fr);
     column-gap: 2rem;
 }
 main > div {
