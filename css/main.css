@@ -44,17 +44,13 @@ header {
     background-color: var(--color-primary);
     color: var(--color-on-primary);
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding-inline: calc(10vw - 0rem);
     height: 4rem;
     flex-shrink: 0;
 }
 
-/* Prevenir salto visual en el header */
-header * {
-    line-height: 1;
-}
+
 
 header .logo {
     justify-self: end;
