@@ -45,10 +45,7 @@ main {
     background-color: var(--color-background);
     color: var(--color-on-background);
     display: grid;
-    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
-            16em,
-            1fr
-        );
+    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(16em, 1fr);
     column-gap: 2rem;
 }
 
@@ -58,8 +55,6 @@ header {
     height: 4rem;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
-    align-items: center;
-    line-height: 1;
 }
 
 @media screen and (min-width: 1366px) {
@@ -89,8 +84,7 @@ main {
 }
 
 main > div {
-    overflow-y: visible;
-    background-color: var(--color-background);
+    overflow-y: auto;
 }
 
 /* --- Spinner --- */
