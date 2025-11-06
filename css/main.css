@@ -43,10 +43,7 @@ main {
     background-color: var(--color-background);
     color: var(--color-on-background);
     display: grid;
-    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
-            16em,
-            1fr
-        );
+    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(16em, 1fr);
     column-gap: 2rem;
 }
 
@@ -58,6 +55,7 @@ header {
     justify-content: space-between;
     padding-inline: calc(10vw - 0rem);
     height: 4rem;
+    flex-shrink: 0;
 }
 
 header .logo {
