@@ -4,9 +4,9 @@
     min-height: auto;
     padding: 2rem 4rem;
     display: block;
-    grid-column: 1 / -1 !important; /* ocupa todo el ancho de la grid global */
+    grid-column: 1 / -1 !; /* ocupa todo el ancho de la grid global */
     flex-direction: column;
-    overflow: visible !important;
+    overflow: visible;
     gap: 2rem;
 }
 
