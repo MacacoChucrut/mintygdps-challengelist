@@ -88,15 +88,6 @@ header .logo h2 {
     }
 }
 
-/* --- MAIN --- */
-main {
-    display: grid;
-    grid-template-columns: minmax(16rem, 1fr)
-                           minmax(16rem, 2fr)
-                           minmax(16em, 1fr);
-    column-gap: 2rem;
-}
-
 main > div {
     overflow-y: visible;
     background-color: var(--color-background);
