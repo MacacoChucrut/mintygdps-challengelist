@@ -35,22 +35,38 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    min-height: 100%;
+    min-height: 100vh;
     background-color: var(--color-background);
 }
 
-/* --- HEADER --- */
-header {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-    display: flex;
-    justify-content: space-between;
-    padding-inline: calc(10vw - 0rem);
-    height: 4rem;
-    flex-shrink: 0;
+/* --- Asegurar que main también tenga fondo oscuro --- */
+header,
+main {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    display: grid;
+    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
+            16em,
+            1fr
+        );
+    column-gap: 2rem;
 }
 
+header {
+    display: flex;
+    padding-inline: calc(10vw - 0rem);
+    height: 4rem;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    align-items: center;
+    line-height: 1;
+}
 
+@media screen and (min-width: 1366px) {
+    header {
+        display: flex;
+    }
+}
 
 header .logo {
     justify-self: end;
@@ -64,34 +80,12 @@ header .nav {
     flex: 1;
 }
 
-/* --- Separar el logo del menú principal --- */
-header .logo {
-    display: flex;
-    align-items: center;
-    margin-right: 1.3rem; /* separa el logo del texto "List" */
-}
-
-header .logo h2 {
-    margin: 0; /* asegura que no tenga espacio extra interno */
-    padding: 0;
-}
-
-@media screen and (min-width: 1366px) {
-    header {
-        display: flex;
-    }
-}
-
-/* --- MAIN --- */
 main {
     flex: 1;
-    background-color: var(--color-background);
-    color: var(--color-on-background);
     display: grid;
-    grid-template-columns: minmax(16rem, 1fr)
-                           minmax(16rem, 2fr)
-                           minmax(16em, 1fr);
+    grid-template-rows: minmax(0, 1fr);
     column-gap: 2rem;
+    background-color: var(--color-background);
 }
 
 main > div {
