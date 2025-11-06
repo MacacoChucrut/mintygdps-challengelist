@@ -68,18 +68,6 @@ header .nav {
     flex: 1;
 }
 
-/* --- Separar el logo del menú principal --- */
-header .logo {
-    display: flex;
-    align-items: center;
-    margin-right: 1.3rem; /* separa el logo del texto "List" */
-}
-
-header .logo h2 {
-    margin: 0; /* asegura que no tenga espacio extra interno */
-    padding: 0;
-}
-
 @media screen and (min-width: 1366px) {
     header {
         display: flex;
