@@ -24,8 +24,7 @@ header.dark {
 }
 
 /* --- Fondo global y scroll --- */
-html,
-body {
+html, body {
     height: auto;
     min-height: 100vh;
     background-color: var(--color-background);
@@ -50,6 +49,7 @@ header {
     justify-content: space-between;
     padding-inline: calc(10vw - 0rem);
     height: 4rem;
+    position: relative;
     z-index: 10;
 }
 
