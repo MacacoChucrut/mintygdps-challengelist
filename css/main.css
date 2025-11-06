@@ -23,15 +23,19 @@ header.dark {
     --color-on-error: white;
 }
 
+/* --- Fijar fondo global --- */
 html,
 body {
     height: 100%;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
 }
 
 body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    background-color: var(--color-background);
 }
 
 header,
@@ -46,18 +50,17 @@ main {
     column-gap: 2rem;
 }
 
+/* --- HEADER --- */
 header {
-    display: flex;
-    padding-inline: calc(15vw - 5rem);
-    height: 4rem;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
+    display: flex;
+    justify-content: space-between;
+    padding-inline: calc(10vw - 0rem);
+    height: 4rem;
+    flex-shrink: 0;
 }
-@media screen and (min-width: 1366px) {
-    header {
-        display: flex;
-    }
-}
+
 header .logo {
     justify-self: end;
     align-self: center;
@@ -65,21 +68,47 @@ header .logo {
     align-items: flex-end;
     gap: 1rem;
 }
+
 header .nav {
     flex: 1;
 }
 
-main {
-    height: 0;
-    flex: 1;
-    display: grid;
-    grid-template-rows: minmax(0, 1fr);
-    column-gap: 2rem;
-}
-main > div {
-    overflow-y: auto;
+/* --- Separar el logo del menú principal --- */
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1.3rem; /* separa el logo del texto "List" */
 }
 
+header .logo h2 {
+    margin: 0; /* asegura que no tenga espacio extra interno */
+    padding: 0;
+}
+
+@media screen and (min-width: 1366px) {
+    header {
+        display: flex;
+    }
+}
+
+/* --- MAIN --- */
+main {
+    flex: 1;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    display: grid;
+    grid-template-columns: minmax(16rem, 1fr)
+                           minmax(16rem, 2fr)
+                           minmax(16em, 1fr);
+    column-gap: 2rem;
+}
+
+main > div {
+    overflow-y: visible;
+    background-color: var(--color-background);
+}
+
+/* --- Spinner --- */
 .spinner {
     display: flex;
     align-items: center;
@@ -87,6 +116,7 @@ main > div {
     grid-column: span 3;
 }
 
+/* --- Checkbox --- */
 input[type="checkbox"] {
     height: 1.25rem;
     width: 1.25rem;
