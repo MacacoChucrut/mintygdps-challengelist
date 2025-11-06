@@ -50,13 +50,12 @@
 
 .packs-grid {
     display: flex;
-    flex-direction: column; /* ← cambia dirección */
+    flex-direction: column-reverse;
     overflow-x: auto;
     scroll-snap-type: y mandatory;
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     gap: 2rem;
-    width: 50rem;
-    max-width: 80rem;
+    width: 40rem;
     padding-bottom: 1rem;
 }
 
