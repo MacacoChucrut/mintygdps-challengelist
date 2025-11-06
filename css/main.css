@@ -37,6 +37,7 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: var(--color-background);
+    overflow-y: auto; /* permite el scroll global */
 }
 
 /* --- HEADER --- */
@@ -48,6 +49,8 @@ header {
     justify-content: space-between;
     padding-inline: calc(10vw - 0rem);
     height: 4rem;
+    position: relative; /* asegura que se mueva con el flujo */
+    z-index: 10; /* se mantiene por encima del contenido */
 }
 
 /* Prevenir salto visual en el header */
@@ -63,10 +66,6 @@ header .logo {
     gap: 1rem;
 }
 
-header .nav {
-    flex: 1;
-}
-
 /* --- Separar el logo del menú principal --- */
 header .logo {
     display: flex;
@@ -75,8 +74,12 @@ header .logo {
 }
 
 header .logo h2 {
-    margin: 0; /* asegura que no tenga espacio extra interno */
+    margin: 0;
     padding: 0;
+}
+
+header .nav {
+    flex: 1;
 }
 
 @media screen and (min-width: 1366px) {
@@ -90,11 +93,10 @@ main {
     flex: 1;
     background-color: var(--color-background);
     color: var(--color-on-background);
-    display: grid;
-    grid-template-columns: minmax(16rem, 1fr)
-                           minmax(16rem, 2fr)
-                           minmax(16em, 1fr);
-    column-gap: 2rem;
+    display: block; /* evita conflicto con grid */
+    min-height: calc(100vh - 4rem); /* ocupa el resto del alto debajo del header */
+    overflow: visible;
+    padding-bottom: 2rem; /* espacio final visual */
 }
 
 main > div {
@@ -116,4 +118,11 @@ input[type="checkbox"] {
     width: 1.25rem;
     cursor: pointer;
     margin: 0;
+}
+
+/* --- Fix: asegurar scroll global y layout correcto --- */
+html, body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
 }
