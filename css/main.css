@@ -23,20 +23,19 @@ header.dark {
     --color-on-error: white;
 }
 
-/* --- Fondo global y scroll --- */
-html, body {
-    height: auto;
-    min-height: 100vh;
+/* --- Fijar fondo global --- */
+html,
+body {
+    height: 100%;
     background-color: var(--color-background);
     color: var(--color-on-background);
-    overflow-y: auto;
-    margin: 0;
 }
 
-/* --- BODY --- */
 body {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
     background-color: var(--color-background);
 }
 
@@ -49,8 +48,7 @@ header {
     justify-content: space-between;
     padding-inline: calc(10vw - 0rem);
     height: 4rem;
-    position: relative;
-    z-index: 10;
+    flex-shrink: 0;
 }
 
 /* Prevenir salto visual en el header */
@@ -66,6 +64,10 @@ header .logo {
     gap: 1rem;
 }
 
+header .nav {
+    flex: 1;
+}
+
 /* --- Separar el logo del menú principal --- */
 header .logo {
     display: flex;
@@ -74,12 +76,8 @@ header .logo {
 }
 
 header .logo h2 {
-    margin: 0;
+    margin: 0; /* asegura que no tenga espacio extra interno */
     padding: 0;
-}
-
-header .nav {
-    flex: 1;
 }
 
 @media screen and (min-width: 1366px) {
@@ -93,10 +91,11 @@ main {
     flex: 1;
     background-color: var(--color-background);
     color: var(--color-on-background);
-    display: block; /* evita conflicto con grid y permite scroll */
-    min-height: calc(100vh - 4rem);
-    overflow: visible;
-    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: minmax(16rem, 1fr)
+                           minmax(16rem, 2fr)
+                           minmax(16em, 1fr);
+    column-gap: 2rem;
 }
 
 main > div {
