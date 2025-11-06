@@ -58,7 +58,6 @@ header {
     justify-content: space-between;
     padding-inline: calc(10vw - 0rem);
     height: 4rem;
-    flex-shrink: 0;
 }
 
 header .logo {
@@ -93,7 +92,6 @@ header .logo h2 {
 
 /* --- MAIN --- */
 main {
-    height: 0;
     flex: 1;
     background-color: var(--color-background);
     color: var(--color-on-background);
