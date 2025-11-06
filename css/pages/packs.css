@@ -4,16 +4,15 @@
     height: auto;
     padding: 2rem 4rem;
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
 }
 
 .packs-header {
     max-width: 30rem;
     text-align: left;
-    display: flex;
     flex-direction: column;
-    gap: 5rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin-top: 1rem;
 }
 
 .packs-header h3 {
