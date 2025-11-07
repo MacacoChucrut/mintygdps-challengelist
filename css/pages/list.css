@@ -50,6 +50,7 @@
     gap: 2rem;
     padding-right: 2rem;
     max-width: 48rem;
+    animation: fadeInRight 0.4s ease;
 }
 .page-list .level-container .level .level-authors {
     display: grid;
@@ -110,6 +111,7 @@
     background-color: var(--color-error);
     color: var(--color-on-error);
     border-radius: 0.5rem;
+    animation: shakeIn 0.4s ease;
 }
 .page-list .meta .editors {
     display: flex;
