@@ -240,17 +240,18 @@ body {
 }
 
 .packs-suggest .submit-btn {
-  display: inline-block;
-  background-color: var(--color--on-primary);
-  color: var(--color-primary);
-  font-family: "Lexend Deca", sans-serif;
-  font-weight: 500;
-  padding: 0.6rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: transform 100ms ease;
+    display: inline-block;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 500;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: transform 100ms ease;
 }
 
 .packs-suggest .submit-btn:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
+    background-color: var(--color-background-hover); /* un leve cambio al pasar el ratón */
 }
