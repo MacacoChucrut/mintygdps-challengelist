@@ -1,11 +1,11 @@
 [
     {
-        "name": "Consistency Beginner Pack",
+        "name": "Easy Beginner Pack",
         "levels": ["bowl of water challenge", "bam", "lum1"],
         "color": "#0bd"
     },
     {
-        "name": "Consistency Extreme Pack",
+        "name": "Extreme Consistency Pack",
         "levels": ["the sigma variant", "Shiro Blade I", "botox"],
         "color": "#f14"
     },
