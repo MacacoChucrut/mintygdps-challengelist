@@ -235,19 +235,19 @@ body {
 
 .packs-suggest {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 1.5rem 0 1rem;
 }
 
 .packs-suggest .submit-btn {
   display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--color-on-primary);
+  background-color: #fff
+  color: var(--color-primary);
   font-family: "Lexend Deca", sans-serif;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
+  font-weight: 500;
+  padding: 0.6;
+  border-radius: 0.5rem;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: transform 100ms ease;
 }
 
 .packs-suggest .submit-btn:hover {
