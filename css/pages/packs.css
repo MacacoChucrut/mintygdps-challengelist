@@ -241,7 +241,7 @@ body {
 
 .packs-suggest .submit-btn {
     display: inline-block;
-    background-color: var(--color-background);
+    background-color: var(--color-on-primary);
     color: var(--color-primary);
     font-family: "Lexend Deca", sans-serif;
     font-weight: 500;
