@@ -4,10 +4,7 @@
     min-height: auto;
     padding: 2rem 4rem;
     display: block;
-    grid-column: 1 / -1 !; /* ocupa todo el ancho de la grid global */
-    flex-direction: column;
     overflow: visible;
-    gap: 2rem;
 }
 
 .packs-header {
@@ -25,10 +22,11 @@
 .packs-header h3 {
     font-family: "Lexend Deca", sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--color-on-background);
     text-align: center;
     background-color: transparent;
+    margin-top: 0.5rem;
 }
 
 .packs-header p {
@@ -39,7 +37,7 @@
     line-height: 1.6rem;
     text-align: center;
     background-color: transparent;
-    margin: 1rem;
+    margin: 1.6rem;
 }
 
 .packs-container {
@@ -62,7 +60,7 @@
 .pack-card {
     flex: 0 0 22rem; /* ← ancho fijo */
     background: var(--color-background);
-    border: 2px solid var(--pack-color, var(--color-primary));
+    border: 3px solid var(--pack-color, var(--color-primary));
     border-radius: 1rem;
     padding: 1.5rem;
     display: flex;
