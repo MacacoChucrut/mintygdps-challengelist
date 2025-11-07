@@ -234,13 +234,13 @@ body {
 }
 
 .packs-suggest {
-  text-align: center;
-  margin-top: 1.5rem 0 1rem;
+    text-align: center;
+    margin-top: 1.5rem 0 1rem;
+    background-color: #fff;
 }
 
 .packs-suggest .submit-btn {
   display: inline-block;
-  background-color: #fff
   color: var(--color-primary);
   font-family: "Lexend Deca", sans-serif;
   font-weight: 500;
