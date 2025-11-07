@@ -61,13 +61,12 @@ export async function fetchEditors() {
 export async function fetchLeaderboard() {
     const list = await fetchList();
 
-    // Load packs (optional)
+    // ✅ Load packs using the same logic as fetchPacks() (rewards auto-calculated)
     let packs = [];
     try {
-        const res = await fetch(`${dir}/_packs.json`);
-        if (res.ok) packs = await res.json();
+        packs = await fetchPacks();
     } catch {
-        console.warn('_packs.json not found, skipping pack rewards');
+        console.warn('Error loading packs with rewards');
     }
 
     const scoreMap = {};
