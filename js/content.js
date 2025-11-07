@@ -166,7 +166,7 @@ export async function fetchLeaderboard() {
 
 /**
  * Fetches packs (custom groupings of levels)
- * 🔹 Ahora calcula automáticamente el puntaje total sumando los puntos de cada nivel
+ * 🔹 Ahora calcula el reward sumando los puntos reales de los niveles según el rank del list
  */
 export async function fetchPacks() {
     try {
@@ -174,23 +174,33 @@ export async function fetchPacks() {
         if (!res.ok) throw new Error('Failed to load _packs.json');
         const packs = await res.json();
 
-        // 🔸 Calcular puntaje total por pack
+        // ✅ Cargamos la lista completa de niveles
+        const list = await fetchList();
+
         packs.forEach(pack => {
-            if (pack.levels && pack.levels.length > 0) {
-                // Si los niveles son objetos con { name, points }
-                if (typeof pack.levels[0] === "object") {
-                    pack.reward = pack.levels.reduce(
-                        (sum, lvl) => sum + (lvl.points || 0),
-                        0
-                    );
+            let totalReward = 0;
+
+            // Recorrer cada nivel del pack
+            pack.levels.forEach(levelName => {
+                // Buscar el nivel dentro de la lista
+                const entry = list.find(([lvl]) =>
+                    lvl.name.toLowerCase() === levelName.toLowerCase()
+                );
+
+                if (entry) {
+                    const [lvl, err] = entry;
+                    const rank = list.indexOf(entry) + 1;
+
+                    // Calcular puntaje como en el leaderboard
+                    const levelScore = score(rank, 100, lvl.percentToQualify);
+                    totalReward += levelScore;
+                } else {
+                    console.warn(`Nivel no encontrado en la lista: ${levelName}`);
                 }
-                // Si los niveles son solo nombres (strings)
-                else {
-                    pack.reward = 0; // o podrías calcularlo de otra fuente si existe
-                }
-            } else {
-                pack.reward = 0;
-            }
+            });
+
+            // Guardar reward final
+            pack.reward = round(totalReward);
         });
 
         return packs;
