@@ -165,7 +165,8 @@ export async function fetchLeaderboard() {
 
 /**
  * Fetches packs (custom groupings of levels)
- * 🔹 Ahora calcula el reward sumando los puntos reales de los niveles según el rank del list
+ * 🔹 Calcula el reward total sumando los puntos reales de los niveles según el rank
+ * 🔹 Aplica un multiplicador según la dificultad promedio del pack
  */
 export async function fetchPacks() {
     try {
@@ -173,24 +174,25 @@ export async function fetchPacks() {
         if (!res.ok) throw new Error('Failed to load _packs.json');
         const packs = await res.json();
 
-        // ✅ Cargamos la lista completa de niveles
+        // ✅ Cargar lista completa de niveles (para acceder a rank y dificultad)
         const list = await fetchList();
 
         packs.forEach(pack => {
             let totalReward = 0;
+            const ranks = [];
 
-            // Recorrer cada nivel del pack
+            // Recorrer niveles del pack
             pack.levels.forEach(levelName => {
-                // Buscar el nivel dentro de la lista
                 const entry = list.find(([lvl]) =>
                     lvl.name.toLowerCase() === levelName.toLowerCase()
                 );
 
                 if (entry) {
-                    const [lvl, err] = entry;
+                    const [lvl] = entry;
                     const rank = list.indexOf(entry) + 1;
+                    ranks.push(rank);
 
-                    // Calcular puntaje como en el leaderboard
+                    // Calcular puntaje base igual que en leaderboard
                     const levelScore = score(rank, 100, lvl.percentToQualify);
                     totalReward += levelScore;
                 } else {
@@ -198,8 +200,21 @@ export async function fetchPacks() {
                 }
             });
 
-            // Guardar reward final
-            pack.reward = round(totalReward);
+            // Calcular promedio de ranks (menor = más difícil)
+            const avgRank = ranks.length > 0
+                ? ranks.reduce((a, b) => a + b, 0) / ranks.length
+                : 999;
+
+            // multiplicador según dificultad promedio
+            let multiplier = 1.0;
+            if (avgRank <= 10) multiplier = 1.2;       // packs muy difíciles
+            else if (avgRank <= 25) multiplier = 1.15; // packs difíciles
+            else if (avgRank <= 45) multiplier = 1.1;  // packs medios
+            else if (avgRank <= 60) multiplier = 1.05; // packs normales
+            else multiplier = 0.9;                    // packs fáciles
+
+            // Calcular reward final
+            pack.reward = round(totalReward * multiplier);
         });
 
         return packs;
