@@ -31,7 +31,7 @@ export default {
                         target="_blank" 
                         class="submit-btn"
                       >
-                        Suggest a Pack
+                        Suggest Pack
                       </a>
                     </div>
                 
