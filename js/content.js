@@ -166,12 +166,33 @@ export async function fetchLeaderboard() {
 
 /**
  * Fetches packs (custom groupings of levels)
+ * 🔹 Ahora calcula automáticamente el puntaje total sumando los puntos de cada nivel
  */
 export async function fetchPacks() {
     try {
         const res = await fetch(`${dir}/_packs.json`);
         if (!res.ok) throw new Error('Failed to load _packs.json');
         const packs = await res.json();
+
+        // 🔸 Calcular puntaje total por pack
+        packs.forEach(pack => {
+            if (pack.levels && pack.levels.length > 0) {
+                // Si los niveles son objetos con { name, points }
+                if (typeof pack.levels[0] === "object") {
+                    pack.reward = pack.levels.reduce(
+                        (sum, lvl) => sum + (lvl.points || 0),
+                        0
+                    );
+                }
+                // Si los niveles son solo nombres (strings)
+                else {
+                    pack.reward = 0; // o podrías calcularlo de otra fuente si existe
+                }
+            } else {
+                pack.reward = 0;
+            }
+        });
+
         return packs;
     } catch (err) {
         console.error('Error fetching packs:', err);
