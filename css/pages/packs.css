@@ -53,13 +53,14 @@
     flex-direction: row;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     gap: 2rem;
     width: 100%;
     padding: 2rem 0 2rem
+    justify-content: flex-start;
 }
 
 .pack-card {
+    flex: 0 0 22rem; /* ← ancho fijo */
     background: var(--color-background);
     border: 2px solid var(--pack-color, var(--color-primary));
     border-radius: 1rem;
