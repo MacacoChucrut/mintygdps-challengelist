@@ -139,3 +139,11 @@
     margin-right: 7px;
     cursor: default;
 }
+
+.no-video {
+    color: #888;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "Lexend Deca", sans-serif;
+}
