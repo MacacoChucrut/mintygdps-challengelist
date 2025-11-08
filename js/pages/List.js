@@ -42,19 +42,7 @@ export default {
                     <div style="display:flex">
                         <div v-for="tag in level.tags" class="tag">{{tag}}</div>
                     </div>
-                    
-                    <iframe 
-                        v-if="level.verification" 
-                        class="video" 
-                        id="videoframe" 
-                        :src="video" 
-                        frameborder="0">
-                    </iframe>
-
-                    <div v-else class="no-video">
-                        <p>No video available</p>
-                    </div>
-
+                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points when completed</div>
