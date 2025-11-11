@@ -1,7 +1,6 @@
 {
     "id": 2288,
     "name": "Syphon",
-    "author": "Anduval",
     "creators": ["Virek"],
     "verifier": "Virek",
     "verification": "https://youtu.be/8oTQr_j3pRw?feature=shared",
@@ -40,6 +39,12 @@
         {
             "user": "Herobrain",
             "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "Z3pH4x",
+            "link": "https://youtu.be/SBgiw9paDn0?si=NdtgFSRefCnJuKEc",
             "percent": 100,
             "mobile": false
         }
