@@ -22,15 +22,11 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-            <div class="search-bar">
-  <input 
-    type="text" 
-    v-model="searchQuery" 
-    placeholder="Search Levels..." 
-    class="search-input"
-  />
-</div>
-                <table class="list" v-if="list">
+                <!-- SEARCH BOX: inserted here (above the levels list) -->
+                <div id="level-search-wrapper" style="padding:16px;">
+                  <!-- Toggle buttons: Classic / Upcoming -->
+                  <div class="edi-list-toggle" style="display:flex; gap:8px; margin-bottom:8px;">
+                    <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
                         <p class="type-label-lg" :style="{ color: i + 1 > 75 ? 'darkgrey' : 'inherit' }"> #{{ i + 1 }}</p>
