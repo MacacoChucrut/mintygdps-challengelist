@@ -23,12 +23,11 @@ export default {
 
         <main v-else class="page-list">
 
-            <!-- 🌸 Search bar kawaii owo -->
             <div style="padding: 0 1rem 1rem 1rem;">
                 <input 
                     v-model="searchQuery"
                     type="text"
-                    placeholder="Search levels uwu..."
+                    placeholder="im gay"
                     class="search-bar"
                     style="width: 100%; padding: 0.7rem; border-radius: 0.5rem;
                            border: 2px solid var(--color-primary);
