@@ -235,7 +235,6 @@ export default {
             return;
         }
 
-        // Crear lista original preservando índice real
         this.filteredList = this.list.map((entry, index) => ({
             data: entry[0],
             error: entry[1],
@@ -252,7 +251,6 @@ export default {
         applyFilter() {
             const q = this.searchQuery.trim().toLowerCase();
 
-            // Reset si la barra está vacía
             if (!q) {
                 this.filteredList = this.list.map((entry, index) => ({
                     data: entry[0],
