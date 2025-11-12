@@ -158,22 +158,31 @@ export default {
         roleIconMap,
         store
     }),
+    
     computed: {
         level() {
-            return this.list[this.selected][0];
-        },
-        video() {
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
-            }
+        return this.list[this.selected][0];
+      },
+      filteredList() {
+        if (!this.searchQuery) return this.list;
+        const q = this.searchQuery.toLowerCase();
+        return this.list.filter(([level]) => 
+         level && level.name.toLowerCase().includes(q)
+        );
+      },
+      video() {
+        if (!this.level.showcase) {
+          return embed(this.level.verification);
+        }
 
-            return embed(
-                this.toggledShowcase
-                    ? this.level.showcase
-                    : this.level.verification
-            );
-        },
-    },
+    return embed(
+      this.toggledShowcase
+        ? this.level.showcase
+        : this.level.verification
+    );
+  },
+},
+
     async mounted() {
         // Hide loading spinner
         this.list = await fetchList();
