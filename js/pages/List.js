@@ -150,14 +150,16 @@ export default {
     `,
     
     data: () => ({
-        list: [],
-        editors: [],
-        loading: true,
-        selected: 0,
-        errors: [],
-        roleIconMap,
-        store
-    }),
+          list: [],
+          editors: [],
+          loading: true,
+          selected: 0,
+          errors: [],
+          searchQuery: "",
+          roleIconMap,
+          store
+        }),
+
     
     computed: {
         level() {
