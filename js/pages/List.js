@@ -168,19 +168,20 @@ export default {
 
                     <h3>Level Rules</h3>
                     <p>The level has to be under 30 seconds.</p>
-                    <p>For a level to place, it must be harder than #75.</p>
-                    <p>Random Trigger cannot affect gameplay or difficulty.</p>
-                    <p>Copying from outside the GDPS is NOT allowed.</p>
-                    <p>15 CPS max.</p>
+                    <p>For a level to place, it must be harder than the level placed at #75.</p>
+                    <p>Anything using the Random Trigger must not affect the gameplay or visual difficulty.</p>
+                    <p>Copying parts from a level outside the GDPS is NOT allowed.</p>
+                    <p>Levels requiring more than 15 clicks per second are not allowed.</p>
 
                     <h3>Submission Requirements</h3>
-                    <p>Video proof required for Top 30.</p>
-                    <p>Upload as YouTube video.</p>
-                    <p>Cheat indicator required if mods used.</p>
-                    <p>Show previous attempt unless first try.</p>
-                    <p>No major shortcuts.</p>
-                    <p>Show completion screen.</p>
-                    <p>CBF & FPS/TPS bypass allowed; physics bypass NOT allowed.</p>
+                    <p>Video proof is required for Top 30 Challenges.</p>
+                    <p>Verifications must be uploaded in the format of a youtube video.</p>
+                    <p>Cheat indicator is required if a modmenu with the feature is being used.</p>
+                    <p>The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.</p>
+                    <p>Do not use major secret ways or bug routes.</p>
+                    <p>The recording must show the level complete screen.</p>
+                    <p>Click Between Frames and FPS/TPS bypass are allowed, however, Physics bypass is NOT allowed.</p>
+
                 </div>
             </div>
 
