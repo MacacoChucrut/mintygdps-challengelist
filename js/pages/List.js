@@ -16,6 +16,7 @@ const roleIconMap = {
 
 export default {
     components: { Spinner, LevelAuthors },
+
     template: `
         <main v-if="loading">
             <Spinner></Spinner>
@@ -23,52 +24,52 @@ export default {
 
         <main v-else class="page-list">
 
-            <!-- SEARCH BAR -->
-            <div class="search-container" style="padding: 1rem 1rem 0.5rem;">
-                <input 
-                    v-model="searchQuery"
-                    type="text"
-                    placeholder="Search levels..."
-                    class="search-input"
-                    style="
-                        width: 100%;
-                        padding: 10px 15px;
-                        border-radius: 8px;
-                        border: none;
-                        background: var(--color-background-hover);
-                        color: var(--color-on-background);
-                        font-size: 1rem;
-                        outline: none;
-                    "
-                />
-            </div>
-
+            <!-- COLUMNA IZQUIERDA: SEARCH + LISTA -->
             <div class="list-container">
-                <table class="list" v-if="filteredList.length > 0">
 
+                <!-- SEARCH BAR (DEBE IR AQUÍ PARA NO ROMPER EL LAYOUT) -->
+                <div class="search-container" style="padding: 0 0 1rem;">
+                    <input 
+                        v-model="searchQuery"
+                        type="text"
+                        placeholder="Search levels..."
+                        class="search-input"
+                        style="
+                            width: 100%;
+                            padding: 10px 15px;
+                            border-radius: 8px;
+                            border: none;
+                            background: var(--color-background-hover);
+                            color: var(--color-on-background);
+                            font-size: 1rem;
+                            outline: none;
+                        "
+                    />
+                </div>
+
+                <table class="list" v-if="filteredList.length > 0">
                     <tr v-for="(item, i) in filteredList" :key="i">
 
                         <!-- rank -->
                         <td class="rank">
                             <p class="type-label-lg"
-                                :style="{ color: item[2] + 1 > 75 ? 'darkgrey' : 'inherit' }">
-                                #{{ item[2] + 1 }}
+                                :style="{ color: item.originalIndex + 1 > 75 ? 'darkgrey' : 'inherit' }">
+                                #{{ item.originalIndex + 1 }}
                             </p>
                         </td>
 
-                        <!-- level -->
+                        <!-- level button -->
                         <td class="level"
-                            :class="{ 'active': selected === item[2], 'error': !item[0] }">
+                            :class="{ 'active': selected === item.originalIndex, 'error': !item.data }">
 
-                            <button @click="selected = item[2]">
+                            <button @click="selected = item.originalIndex">
                                 <span class="type-label-lg">
-                                    {{ item[0]?.name || \`Error (\${item[1]}.json)\` }}
+                                    {{ item.data?.name || \`Error (\${item.error}.json)\` }}
                                 </span>
                             </button>
                         </td>
 
                     </tr>
-
                 </table>
 
                 <p v-else style="text-align:center; padding:1rem; opacity:0.7;">
@@ -76,17 +77,18 @@ export default {
                 </p>
             </div>
 
+            <!-- COLUMNA CENTRAL: NIVEL -->
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
 
                     <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
 
-                    <div style="display:flex">
+                    <div style="display:flex;">
                         <div v-for="tag in level.tags" class="tag">{{ tag }}</div>
                     </div>
 
-                    <!-- Conditional video -->
+                    <!-- Video solo si existe -->
                     <iframe
                         v-if="video"
                         class="video"
@@ -95,8 +97,7 @@ export default {
                         frameborder="0">
                     </iframe>
 
-                    <p v-else class="no-video-msg" 
-                        style="opacity:0.6; margin-top:1rem;">
+                    <p v-else style="opacity:0.6; margin-top:1rem;">
                         No verification video available for this level.
                     </p>
 
@@ -118,9 +119,7 @@ export default {
 
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
-                            <td class="percent">
-                                <p>{{ record.percent }}%</p>
-                            </td>
+                            <td class="percent"><p>{{ record.percent }}%</p></td>
                             <td class="user">
                                 <a :href="record.link" target="_blank" class="type-label-lg">
                                     {{ record.user }}
@@ -135,11 +134,13 @@ export default {
                     </table>
                 </div>
 
-                <div v-else class="level" style="height:100%; display:flex; justify-content:center; align-items:center;">
+                <div v-else class="level" 
+                     style="height:100%; display:flex; justify-content:center; align-items:center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
 
+            <!-- COLUMNA DERECHA: META INFO -->
             <div class="meta-container">
                 <div class="meta">
 
@@ -158,9 +159,12 @@ export default {
                         <h3>List Editors</h3>
                         <ol class="editors">
                             <li v-for="editor in editors">
-                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
-                                <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">
-                                    {{ editor.name }}
+                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" 
+                                     :alt="editor.role">
+                                <a v-if="editor.link" target="_blank" 
+                                   class="type-label-lg link"
+                                   :href="editor.link">
+                                   {{ editor.name }}
                                 </a>
                                 <p v-else>{{ editor.name }}</p>
                             </li>
@@ -169,19 +173,19 @@ export default {
 
                     <h3>Level Rules</h3>
                     <p>The level has to be under 30 seconds.</p>
-                    <p>For a level to place, it must be harder than the level placed at #75.</p>
-                    <p>Anything using the Random Trigger must not affect gameplay or difficulty.</p>
-                    <p>Copying parts from a level outside the GDPS is NOT allowed.</p>
-                    <p>Levels requiring more than 15 clicks per second are not allowed.</p>
+                    <p>For a level to place, it must be harder than #75.</p>
+                    <p>Random Trigger cannot affect gameplay or difficulty.</p>
+                    <p>Copying from outside the GDPS is NOT allowed.</p>
+                    <p>15 CPS max.</p>
 
                     <h3>Submission Requirements</h3>
-                    <p>Video proof is required for Top 30 Challenges.</p>
-                    <p>Verifications must be uploaded as a YouTube video.</p>
-                    <p>Cheat indicator is required if a modmenu with that feature is used.</p>
-                    <p>The recording must show the previous attempt unless it's first try.</p>
-                    <p>No major secret routes or bug routes.</p>
-                    <p>Recording must show the level complete screen.</p>
-                    <p>CBF and FPS/TPS bypass allowed, physics bypass NOT allowed.</p>
+                    <p>Video proof required for Top 30.</p>
+                    <p>Upload as YouTube video.</p>
+                    <p>Cheat indicator required if mods used.</p>
+                    <p>Show previous attempt unless first try.</p>
+                    <p>No major shortcuts.</p>
+                    <p>Show completion screen.</p>
+                    <p>CBF & FPS/TPS bypass allowed; physics bypass NOT allowed.</p>
                 </div>
             </div>
 
@@ -194,8 +198,8 @@ export default {
         editors: [],
         loading: true,
         selected: 0,
-        errors: [],
         searchQuery: "",
+        errors: [],
         roleIconMap,
         store
     }),
@@ -211,14 +215,11 @@ export default {
             if (!this.level.verification || this.level.verification.trim() === "")
                 return null;
 
-            if (!this.level.showcase) {
+            if (!this.level.showcase)
                 return embed(this.level.verification);
-            }
 
             return embed(
-                this.toggledShowcase
-                    ? this.level.showcase
-                    : this.level.verification
+                this.toggledShowcase ? this.level.showcase : this.level.verification
             );
         },
     },
@@ -235,9 +236,16 @@ export default {
 
         if (!this.list) {
             this.errors = ["Failed to load list."];
-        } else {
-            this.filteredList = this.list.map((entry, index) => [entry[0], entry[1], index]);
+            this.loading = false;
+            return;
         }
+
+        // Crear lista original preservando índice real
+        this.filteredList = this.list.map((entry, index) => ({
+            data: entry[0],
+            error: entry[1],
+            originalIndex: index
+        }));
 
         this.loading = false;
     },
@@ -249,16 +257,25 @@ export default {
         applyFilter() {
             const q = this.searchQuery.trim().toLowerCase();
 
+            // Reset si la barra está vacía
             if (!q) {
-                this.filteredList = this.list.map((entry, index) => [entry[0], entry[1], index]);
+                this.filteredList = this.list.map((entry, index) => ({
+                    data: entry[0],
+                    error: entry[1],
+                    originalIndex: index
+                }));
                 return;
             }
 
             this.filteredList = this.list
-                .map((entry, index) => [entry[0], entry[1], index])
+                .map((entry, index) => ({
+                    data: entry[0],
+                    error: entry[1],
+                    originalIndex: index
+                }))
                 .filter(item =>
-                    item[0] &&
-                    item[0].name.toLowerCase().includes(q)
+                    item.data &&
+                    item.data.name.toLowerCase().includes(q)
                 );
         }
     }
