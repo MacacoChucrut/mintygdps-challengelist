@@ -24,10 +24,8 @@ export default {
 
         <main v-else class="page-list">
 
-            <!-- COLUMNA IZQUIERDA: SEARCH + LISTA -->
             <div class="list-container">
 
-                <!-- SEARCH BAR (DEBE IR AQUÍ PARA NO ROMPER EL LAYOUT) -->
                 <div class="search-container" style="padding: 0 0 1rem;">
                     <input 
                         v-model="searchQuery"
@@ -77,7 +75,6 @@ export default {
                 </p>
             </div>
 
-            <!-- COLUMNA CENTRAL: NIVEL -->
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
@@ -88,7 +85,6 @@ export default {
                         <div v-for="tag in level.tags" class="tag">{{ tag }}</div>
                     </div>
 
-                    <!-- Video solo si existe -->
                     <iframe
                         v-if="video"
                         class="video"
@@ -140,7 +136,6 @@ export default {
                 </div>
             </div>
 
-            <!-- COLUMNA DERECHA: META INFO -->
             <div class="meta-container">
                 <div class="meta">
 
