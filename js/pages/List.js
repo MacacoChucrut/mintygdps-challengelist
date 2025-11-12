@@ -22,6 +22,16 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
+            
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    v-model="searchQuery" 
+                    placeholder="Search Levels..." 
+                    class="search-input"
+                  />
+                </div>
+                
                     <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
