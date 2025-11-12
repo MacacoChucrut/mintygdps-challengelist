@@ -23,12 +23,11 @@ export default {
         <main v-else class="page-list">
             <div class="list-container">
 
-                <!-- 🌸 Search bar kawaii uwu -->
                 <div class="search-bar">
                     <input 
                         type="text" 
                         v-model="searchQuery" 
-                        placeholder="🔍 Search levels..." 
+                        placeholder="Search levels..." 
                         class="search-input"
                     />
                 </div>
@@ -149,7 +148,7 @@ export default {
         loading: true,
         selected: 0,
         errors: [],
-        searchQuery: "", // 🌸 Nueva propiedad para la search bar uwu
+        searchQuery: "",
         roleIconMap,
         store
     }),
