@@ -33,7 +33,12 @@ export default {
                 </div>
                 
                     <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                    
+                    <tr 
+                        v-for="([level, err], i) in filteredList"
+                        :key="i"
+                    >
+
                         <td class="rank">
                         <p class="type-label-lg" :style="{ color: i + 1 > 75 ? 'darkgrey' : 'inherit' }"> #{{ i + 1 }}</p>
                         </td>
