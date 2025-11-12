@@ -20,67 +20,49 @@ export default {
         <main v-if="loading">
             <Spinner></Spinner>
         </main>
-
         <main v-else class="page-list">
-
-            <div style="padding: 0 1rem 1rem 1rem;">
-                <input 
-                    v-model="searchQuery"
-                    type="text"
-                    placeholder="im gay"
-                    class="search-bar"
-                    style="width: 100%; padding: 0.7rem; border-radius: 0.5rem;
-                           border: 2px solid var(--color-primary);
-                           background: var(--color-background);
-                           color: var(--color-on-background);"
-                >
-            </div>
-
             <div class="list-container">
-                <table class="list" v-if="filteredList.length > 0">
-                    <tr v-for="([level, err, realIndex], i) in filteredList">
+
+                <div class="search-bar">
+                    <input 
+                        type="text" 
+                        v-model="searchQuery" 
+                        placeholder="Search levels..." 
+                        class="search-input"
+                    />
+                </div>
+
+                <table class="list" v-if="list">
+                    <tr v-for="([level, err], i) in filteredList">
                         <td class="rank">
-                            <p class="type-label-lg" 
-                                :style="{ color: realIndex + 1 > 75 ? 'darkgrey' : 'inherit' }">
-                                #{{ realIndex + 1 }}
+                            <p class="type-label-lg" :style="{ color: i + 1 > 75 ? 'darkgrey' : 'inherit' }">
+                                #{{ i + 1 }}
                             </p>
                         </td>
-
-                        <td class="level" :class="{ 'active': selected == realIndex, 'error': !level }">
-                            <button @click="selected = realIndex">
+                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                            <button @click="selected = i">
                                 <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
                         </td>
                     </tr>
                 </table>
-
-                <p v-else style="padding: 1rem; text-align: center; opacity: .6;">
-                    No levels match your search owo...
-                </p>
             </div>
 
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-
                     <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-
                     <div style="display:flex">
                         <div v-for="tag in level.tags" class="tag">{{tag}}</div>
                     </div>
 
-                    <!-- Hide video if empty -->
                     <iframe 
-                        v-if="level.verification"
+                        v-if="level.verification" 
                         class="video" 
                         id="videoframe" 
                         :src="video" 
-                        frameborder="0">
-                    </iframe>
-
-                    <p v-else style="opacity:.6; font-style:italic;">
-                        No verification video available owo~
-                    </p>
+                        frameborder="0"
+                    ></iframe>
 
                     <ul class="stats">
                         <li>
@@ -92,33 +74,28 @@ export default {
                             <p>{{ level.id }}</p>
                         </li>
                     </ul>
-
                     <h2>Victors</h2>
-
                     <p v-if="selected + 1 > 75">
                         This level has fallen into the Legacy List and no longer accepts new records.
                     </p>
-
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
-                            <td class="percent"><p>{{ record.percent }}%</p></td>
-
-                            <td class="user">
-                                <a :href="record.link" target="_blank" class="type-label-lg">
-                                    {{ record.user }}
-                                </a>
+                            <td class="percent">
+                                <p>{{ record.percent }}%</p>
                             </td>
-
+                            <td class="user">
+                                <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
+                            </td>
                             <td class="mobile">
                                 <img 
                                     v-if="record.mobile" 
                                     :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" 
-                                    alt="Mobile">
+                                    alt="Mobile"
+                                >
                             </td>
                         </tr>
                     </table>
                 </div>
-
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
@@ -126,39 +103,25 @@ export default {
 
             <div class="meta-container">
                 <div class="meta">
-
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
-
                     <div class="og">
                         <p class="type-label-md">
                             Website layout made by 
                             <a href="https://tsl.pages.dev/" target="_blank">TheShittyList</a>
                         </p>
                     </div>
-
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
                             <li v-for="editor in editors">
-                                <img 
-                                    :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" 
-                                    :alt="editor.role"
-                                >
-                                <a 
-                                    v-if="editor.link" 
-                                    class="type-label-lg link" 
-                                    target="_blank" 
-                                    :href="editor.link"
-                                >
-                                    {{ editor.name }}
-                                </a>
+                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
+                                <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
                                 <p v-else>{{ editor.name }}</p>
                             </li>
                         </ol>
                     </template>
-
                     <h3>Level Rules</h3>
                     <p>The level has to be under 30 seconds.</p>
                     <p>For a level to place, it must be harder than the level placed at #75.</p>
@@ -168,18 +131,17 @@ export default {
 
                     <h3>Submission Requirements</h3>
                     <p>Video proof is required for Top 30 Challenges.</p>
-                    <p>Verifications must be uploaded as YouTube videos.</p>
-                    <p>Cheat indicator is required if a modmenu with that feature is used.</p>
-                    <p>Recording must show previous attempt + death animation unless first try.</p>
-                    <p>No major secret ways or bug routes.</p>
-                    <p>Recording must show the complete screen.</p>
-                    <p>FPS/TPS bypass allowed. Physics bypass NOT allowed.</p>
+                    <p>Verifications must be uploaded in the format of a youtube video.</p>
+                    <p>Cheat indicator is required if a modmenu with the feature is being used.</p>
+                    <p>The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.</p>
+                    <p>Do not use major secret ways or bug routes.</p>
+                    <p>The recording must show the level complete screen.</p>
+                    <p>Click Between Frames and FPS/TPS bypass are allowed, however, Physics bypass is NOT allowed.</p>
                 </div>
             </div>
-
         </main>
     `,
-
+    
     data: () => ({
         list: [],
         editors: [],
@@ -190,47 +152,45 @@ export default {
         roleIconMap,
         store
     }),
-
     computed: {
-        // ❀ Lista filtrada con el índice real incluido
+        level() {
+            return this.filteredList[this.selected]?.[0];
+        },
         filteredList() {
-            if (!this.searchQuery) {
-                return this.list.map(([lvl, err], idx) => [lvl, err, idx]);
+            if (!this.searchQuery) return this.list;
+            const q = this.searchQuery.toLowerCase();
+            return this.list.filter(([level]) => 
+                level && level.name.toLowerCase().includes(q)
+            );
+        },
+        video() {
+            if (!this.level.showcase) {
+                return embed(this.level.verification);
             }
 
-            const q = this.searchQuery.toLowerCase();
-
-            return this.list
-                .map(([lvl, err], idx) => [lvl, err, idx])
-                .filter(([lvl]) => lvl && lvl.name.toLowerCase().includes(q));
-        },
-
-        level() {
-            return this.list[this.selected][0];
-        },
-
-        video() {
-            if (!this.level.showcase) return embed(this.level.verification);
-
             return embed(
-                this.toggledShowcase ? this.level.showcase : this.level.verification
+                this.toggledShowcase
+                    ? this.level.showcase
+                    : this.level.verification
             );
         },
     },
-
     async mounted() {
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
         if (!this.list) {
-            this.errors = ["Failed to load list. Try again later owo."];
+            this.errors = [
+                "Failed to load list. Retry in a few minutes or notify list staff.",
+            ];
         } else {
             this.errors.push(
                 ...this.list
                     .filter(([_, err]) => err)
-                    .map(([_, err]) => `Failed to load level. (${err}.json)`)
+                    .map(([_, err]) => {
+                        return `Failed to load level. (${err}.json)`;
+                    })
             );
-
             if (!this.editors) {
                 this.errors.push("Failed to load list editors.");
             }
@@ -238,7 +198,6 @@ export default {
 
         this.loading = false;
     },
-
     methods: {
         embed,
         score,
