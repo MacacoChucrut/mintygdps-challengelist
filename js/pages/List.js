@@ -109,7 +109,7 @@ export default {
                     </ul>
 
                     <h2>
-                    Victors 
+                    Victors
                     <span style="margin-left:6px;">
                     ({{ level.records.length }})
                     </span>
