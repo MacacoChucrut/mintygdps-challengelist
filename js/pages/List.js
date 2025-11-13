@@ -46,28 +46,40 @@ export default {
                 </div>
 
                 <table class="list" v-if="filteredList.length > 0">
-                    <tr v-for="(item, i) in filteredList" :key="i">
+                    <template v-for="(item, i) in filteredList" :key="i">
 
-                        <!-- rank -->
-                        <td class="rank">
-                            <p class="type-label-lg"
-                                :style="{ color: item.originalIndex + 1 > 75 ? 'darkgrey' : 'inherit' }">
-                                #{{ item.originalIndex + 1 }}
-                            </p>
-                        </td>
+                        <tr v-if="item.originalIndex + 1 === 76" class="separator-row">
+                            <td colspan="2">
+                                <div class="separator-text">EXTENDED</div>
+                            </td>
+                        </tr>
 
-                        <!-- level button -->
-                        <td class="level"
-                            :class="{ 'active': selected === item.originalIndex, 'error': !item.data }">
+                        <tr>
 
-                            <button @click="selected = item.originalIndex">
-                                <span class="type-label-lg">
-                                    {{ item.data?.name || \`Error (\${item.error}.json)\` }}
-                                </span>
-                            </button>
-                        </td>
+                            <td class="rank">
+                                <p class="type-label-lg"
+                                    :style="{
+                                        color: item.originalIndex + 1 > 75
+                                            ? 'var(--color-extended)'
+                                                : 'inherit'
+                                    }">
+                                    #{{ item.originalIndex + 1 }}
+                                </p>
+                            </td>
 
-                    </tr>
+                            <td class="level"
+                                :class="{ 'active': selected === item.originalIndex, 'error': !item.data }">
+
+                                <button @click="selected = item.originalIndex">
+                                    <span class="type-label-lg">
+                                        {{ item.data?.name || \`Error (\${item.error}.json)\` }}
+                                    </span>
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </template>
                 </table>
 
                 <p v-else style="text-align:center; padding:1rem; opacity:0.7;">
@@ -78,11 +90,19 @@ export default {
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-
                     <LevelAuthors :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-
                     <div style="display:flex;">
+                    
                         <div v-for="tag in level.tags" class="tag">{{ tag }}</div>
+                    </div>
+
+                    <div v-if="level.showcase" class="tabs">
+                        <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
+                            <span class="type-label-lg">Verification</span>
+                        </button>
+                        <button class="tab" :class="{selected: toggledShowcase}" @click="toggledShowcase = true">
+                            <span class="type-label-lg">Showcase</span>
+                        </button>
                     </div>
 
                     <iframe
@@ -108,10 +128,7 @@ export default {
                         </li>
                     </ul>
 
-                    <h2>
-                    Victors ({{ level.records.length }})
-                    </h2>
-                    
+                    <h2>Victors</h2>
                     <p v-if="selected + 1 > 75">
                         This level has fallen into the Legacy List and no longer accepts new records.
                     </p>
@@ -200,7 +217,8 @@ export default {
         searchQuery: "",
         errors: [],
         roleIconMap,
-        store
+        store,
+        toggledShowcase: false,
     }),
 
     computed: {
@@ -218,7 +236,9 @@ export default {
                 return embed(this.level.verification);
 
             return embed(
-                this.toggledShowcase ? this.level.showcase : this.level.verification
+                this.toggledShowcase 
+                    ? this.level.showcase 
+                    : this.level.verification
             );
         },
     },
