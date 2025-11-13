@@ -108,7 +108,12 @@ export default {
                         </li>
                     </ul>
 
-                    <h2>Victors</h2>
+                    <h2>
+                    Victors 
+                    <span style="margin-left:6px;">
+                    ({{ level.records.length }})
+                    </span>
+                    </h2>
                     <p v-if="selected + 1 > 75">
                         This level has fallen into the Legacy List and no longer accepts new records.
                     </p>
