@@ -30,6 +30,12 @@
             "link": "https://youtu.be/GO9o_NyAPQk",
             "percent": 100,
             "mobile": false
+        },
+        {
+            "user": "Hcmaxi",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
         }
     ],
     "tags": ["Ship"]
