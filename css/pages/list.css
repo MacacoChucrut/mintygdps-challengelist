@@ -141,6 +141,10 @@
     cursor: default;
 }
 
+.no-video {
+    text-align: center;
+}
+
 .separator-row td {
     padding: 0.75rem 0;
 }
@@ -167,4 +171,23 @@
     background: var(--color-primary);
     opacity: 0.8;
     border-radius: 2px;
+}
+
+.search-container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-radius: 1rem;
+    box-shadow: 0 -2.5rem 0 var(--color-background);
+    margin-bottom: 0.5rem
+}
+
+.search-input {
+    box-shadow: 0 1rem 1rem var(--color-background);
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 1rem;
+    border: none;
+    background: var(--color-background-hover);
+    outline: none;
 }
