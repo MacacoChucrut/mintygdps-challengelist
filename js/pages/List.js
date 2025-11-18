@@ -63,9 +63,7 @@ export default {
                                 <td class="rank">
                                     <p class="type-label-lg"
                                         :style="{
-                                            color: item.originalIndex + 1 > 200
-                                                ? 'var(--color-extended)'
-                                                : item.originalIndex + 1 > 100
+                                            color: item.originalIndex + 1 > 75
                                                     ? 'var(--color-legacy)'
                                                     : 'inherit'
                                         }">
@@ -138,7 +136,7 @@ export default {
                     </ul>
 
                     <h2>Victors</h2>
-                    <p v-if="selected + 1 > 200">
+                    <p v-if="selected + 1 > 75">
                         This level has fallen into the Legacy List and no longer accepts new records.
                     </p>
 
