@@ -25,6 +25,11 @@
         "color": "#f40"
     },
     {
+        "name": "Hippopottamusphobia Pack",
+        "levels": ["hippopottamusphobia", "Hipothreetamusphobia", "HIPOTOwOTAMUSPHOBIA",],
+        "color": "#287dff"
+    },
+    {
         "name": "Joke Pack",
         "levels": ["femboy challenge", "Walter Toe Simulator", "The Piss Caverns (Solo)"],
         "color": "#f90"
