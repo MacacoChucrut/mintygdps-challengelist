@@ -1,7 +1,6 @@
 {
     "id": 2731,
     "name": "Placehold Challenge",
-    "author": "Gonci",
     "creators": ["Gonci"],
     "verifier": "Gonci",
     "verification": "https://youtu.be/8JY-61ucwO0",
@@ -22,6 +21,12 @@
         {
             "user": "Herobrain",
             "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/xRAJcEkLFgA",
             "percent": 100,
             "mobile": false
         }
