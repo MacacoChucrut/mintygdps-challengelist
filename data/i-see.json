@@ -1,7 +1,6 @@
 {
     "id": 2358,
     "name": "I see",
-    "author": "Mop",
     "creators": ["Mop"],
     "verifier": "Mop",
     "verification": "#",
@@ -40,6 +39,12 @@
         {
             "user": "Herobrain",
             "link": "#",
+            "percent": 100,
+            "mobile": false
+        },
+        {
+            "user": "lolpanda",
+            "link": "https://youtu.be/e6YKpl_GZ9U",
             "percent": 100,
             "mobile": false
         }
