@@ -20,7 +20,7 @@ function getRankColor(rank) {
     if (rank === 3) return '#CD7F32';
     if (rank === 4) return '#4FD1C5';
     if (rank === 5) return '#9F7AEA';
-    if (rank > 100) return 'var(--color-legacy)';
+    if (rank > 75) return 'var(--color-legacy)';
     return null;
 }
 
@@ -56,7 +56,7 @@ export default {
                                 </td>
                             </tr>
 
-                            <tr v-if="item.originalIndex + 1 === 101" class="separator-row">
+                            <tr v-if="item.originalIndex + 1 === 76" class="separator-row">
                                 <td colspan="2">
                                     <div class="separator-text">LEGACY</div>
                                 </td>
