@@ -20,7 +20,7 @@ function getRankColor(rank) {
     if (rank === 3) return '#CD7F32';
     if (rank === 4) return '#4FD1C5';
     if (rank === 5) return '#9F7AEA';
-    if (rank > 75) return 'var(--color-legacy)';
+    if (rank > 100) return 'var(--color-legacy)';
     return null;
 }
 
@@ -56,7 +56,13 @@ export default {
                                 </td>
                             </tr>
 
-                            <tr v-if="item.originalIndex + 1 === 76" class="separator-row">
+                            <tr v-if="item.originalIndex + 1 === 51" class="separator-row">
+                                <td colspan="2">
+                                    <div class="separator-text">EXTENDED</div>
+                                </td>
+                            </tr>
+
+                            <tr v-if="item.originalIndex + 1 === 101" class="separator-row">
                                 <td colspan="2">
                                     <div class="separator-text">LEGACY</div>
                                 </td>
@@ -152,7 +158,7 @@ export default {
 
                     <h2>Victors ({{ level.records?.length || 0 }})</h2>
 
-                    <p v-if="selected + 1 > 75">
+                    <p v-if="selected + 1 > 100">
                         This level has fallen into the Legacy List and no longer accepts new records.
                     </p>
 
@@ -222,7 +228,7 @@ export default {
 
                     <h3>Level Rules</h3>
                     <p>The level has to be under 30 seconds.</p>
-                    <p>For a level to place, it must be harder than the level placed at #75.</p>
+                    <p>For a level to place, it must be harder than the level placed at #100.</p>
                     <p>Anything using the Random Trigger must not affect the gameplay or visual difficulty.</p>
                     <p>Copying parts from a level outside the GDPS is NOT allowed.</p>
                     <p>Levels requiring more than 15 clicks per second are not allowed.</p>
