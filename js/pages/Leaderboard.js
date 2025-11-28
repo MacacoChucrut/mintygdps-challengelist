@@ -100,13 +100,14 @@ export default {
                         </table>
 
                         <!-- Uncompleted -->
+                        <div class="uncompleted">
                         <h2 v-if="uncompletedLevels.length > 0">
                             Uncompleted ({{ uncompletedLevels.length }})
                         </h2>
 
                         <table class="table">
                             <tr v-for="level in uncompletedLevels" :key="level.name">
-                                <div class="uncompleted"><td class="rank"><p>#{{ level.rank }}</p></td>
+                                <td class="rank"><p>#{{ level.rank }}</p></td>
                                 <td class="level">
                                     <span class="type-label-lg">{{ level.name }}</span></div>
                                 </td>
