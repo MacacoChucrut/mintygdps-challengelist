@@ -100,7 +100,7 @@ export default {
                         </table>
 
                         <!-- Uncompleted -->
-                        <div class="uncompleted-title><h2 v-if="uncompletedLevels.length > 0">
+                        <div class="uncompleted-title"><h2 v-if="uncompletedLevels.length > 0">
                             Uncompleted ({{ uncompletedLevels.length }})
                         </h2></div>
 
