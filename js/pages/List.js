@@ -1,370 +1,184 @@
-import { store } from "../main.js";
-import { embed } from "../util.js";
-import { score } from "../score.js";
-import { fetchEditors, fetchList } from "../content.js";
+import { fetchPacks, fetchList } from '../content.js';
+import { getThumbnailFromId, getYoutubeIdFromUrl } from '../util.js';
 
-import Spinner from "../components/Spinner.js";
-import LevelAuthors from "../components/List/LevelAuthors.js";
-
-const roleIconMap = {
-    owner: "crown",
-    admin: "user-gear",
-    helper: "user-shield",
-    dev: "code",
-    trial: "user-lock",
-};
-
-function getRankColor(rank) {
-    if (rank === 1) return '#FFD700';
-    if (rank === 2) return '#C0C0C0';
-    if (rank === 3) return '#CD7F32';
-    if (rank === 4) return '#4FD1C5';
-    if (rank === 5) return '#9F7AEA';
-    if (rank > 100) return 'var(--color-legacy)';
-    return null;
-}
+import Spinner from '../components/Spinner.js';
+import Btn from '../components/Btn.js';
 
 export default {
-    components: { Spinner, LevelAuthors },
-
+    components: { Spinner, Btn },
     template: `
         <main v-if="loading">
             <Spinner></Spinner>
         </main>
+        <main v-else class="page-packs">
 
-        <main v-else class="page-list">
+    <div class="packs-header">
+        <h3>About Packs</h3>
+        <p>
+            Beat every level in a pack and submit your records, once your completions have been accepted, they’ll automatically show up on your profile.
+        </p>
 
-            <div class="list-container">
-            
-                <div class="search-container">
-                    <input 
-                        v-model="searchQuery"
-                        type="text"
-                        placeholder="Search levels..."
-                        class="search-input"
-                    />
-                </div>
+        <div class="packs-suggest">
+            <a 
+                href="https://forms.gle/rTFFLUat1cmPyjZz5" 
+                target="_blank" 
+                class="submit-btn"
+            >
+                Suggest Pack
+            </a>
+        </div>
+    </div>
 
-                <div class="list-scroll">
+    <!-- PACK TABS -->
+    <div class="packs-tabs">
+        <button
+            v-for="(pack, i) in packs"
+            :key="i"
+            :class="['pack-tab', { active: selectedPack === i }]"
+            :style="{ borderColor: pack.color, color: selectedPack === i ? pack.color : '#fff' }"
+            @click="selectedPack = i"
+        >
+            {{ pack.name }}
+        </button>
+    </div>
 
-                    <table class="list" v-if="filteredList.length > 0">
-                        <template v-for="(item, i) in filteredList" :key="i">
+    <!-- PACK CONTENT -->
+    <section class="pack-view" v-if="packs[selectedPack]">
+        <div 
+            class="pack-card big"
+            :style="{ borderColor: packs[selectedPack].color }"
+        >
+            <h2 :style="{ color: packs[selectedPack].color }">
+                {{ packs[selectedPack].name }}
+            </h2>
 
-                            <tr v-if="item.originalIndex + 1 === 1" class="separator-row">
-                                <td colspan="2">
-                                    <div class="separator-text">MAIN</div>
-                                </td>
-                            </tr>
+            <p class="type-label-sm" style="color: #fff;">{{ packs[selectedPack].description }}</p>
 
-                            <tr v-if="item.originalIndex + 1 === 51" class="separator-row">
-                                <td colspan="2">
-                                    <div class="separator-text">EXTENDED</div>
-                                </td>
-                            </tr>
-
-                            <tr v-if="item.originalIndex + 1 === 101" class="separator-row">
-                                <td colspan="2">
-                                    <div class="separator-text">LEGACY</div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="rank">
-                                    <p class="type-label-lg"
-                                       :style="{ color: getRankColor(item.originalIndex + 1) || 'inherit' }">
-                                        #{{ item.originalIndex + 1 }}
-                                    </p>
-                                </td>
-
-                                <td class="level"
-                                    :class="{ 'active': selected === item.originalIndex, 'error': !item.data }">
-
-                                    <button 
-                                        @click="selected = item.originalIndex"
-                                        :style="{ color: getRankColor(item.originalIndex + 1) || 'inherit' }"
+            <div class="pack-levels">
+                <ul>
+                    <li v-for="level in packs[selectedPack].levelObjects" :key="level.name">
+                        <a 
+                            class="level-item"
+                            :href="level.video"
+                            target="_blank"
+                        >
+                            <div class="level-content">
+                                <div class="level-thumb-wrapper">
+                                    <img 
+                                        :src="level.thumbnail"
+                                        class="level-thumb"
+                                        :alt="level.name"
                                     >
-                                        <span class="type-label-lg">
-                                            {{ item.data?.name || \`Error (\${item.error}.json)\` }}
-                                        </span>
-                                    </button>
-                                </td>
-                            </tr>
+                                </div>
 
-                        </template>
-                    </table>
+                                <span class="level-name">{{ level.name }}</span>
+                            </div>
 
-                    <p v-else style="text-align:center; padding:1rem; opacity:0.7;">
-                        No levels found.
-                    </p>
-                </div>
+                            <span class="level-rank">(#{{ level.rank }})</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <div class="level-container">
-                <div class="level" v-if="level">
-                    <h1>{{ level.name }}</h1>
-
-                    <LevelAuthors 
-                        :creators="level.creators" 
-                        :verifier="level.verifier">
-                    </LevelAuthors>
-
-                    <div style="display:flex;">
-                        <div v-for="tag in level.tags" class="tag">{{ tag }}</div>
-                    </div>
-
-                    <div v-if="level.showcase" class="tabs">
-                        <button 
-                            class="tab" 
-                            :class="{selected: !toggledShowcase}" 
-                            @click="toggledShowcase = false"
-                        >
-                            <span class="type-label-lg">Verification</span>
-                        </button>
-
-                        <button 
-                            class="tab" 
-                            :class="{selected: toggledShowcase}" 
-                            @click="toggledShowcase = true"
-                        >
-                            <span class="type-label-lg">Showcase</span>
-                        </button>
-                    </div>
-
-
-                    <iframe
-                        v-if="video"
-                        class="video"
-                        id="videoframe"
-                        :src="video"
-                        frameborder="0">
-                    </iframe>
-
-                    <div class="no-video" v-if="!video && !toggledShowcase">
-                        <p style="opacity:0.6; margin:1rem 0 1rem;">
-                            No verification video available for this level.
-                        </p>
-                    </div>
-
-                    <ul class="stats">
-                        <li>
-                            <div class="type-title-sm">Points when completed</div>
-                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
-                        </li>
-                        <li>
-                            <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
-                        </li>
-                    </ul>
-
-                    <h2>Victors ({{ level.records?.length || 0 }})</h2>
-
-                    <p v-if="selected + 1 > 100">
-                        This level has fallen into the Legacy List and no longer accepts new records.
-                    </p>
-
-                    <table class="records">
-                        <tr v-for="record in level.records" class="record">
-                            <td class="percent">
-                                <p>{{ record.percent }}%</p>
-                            </td>
-                            <td class="user">
-                                <a :href="record.link"
-                                   target="_blank"
-                                   class="type-label-lg">
-                                    {{ record.user }}
-                                </a>
-                            </td>
-                            <td class="mobile">
-                                <img v-if="record.mobile"
-                                     :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`"
-                                     alt="Mobile">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div v-else class="level"
-                     style="height:100%; display:flex; justify-content:center; align-items:center;">
-                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
-                </div>
+            <div class="pack-reward" v-if="packs[selectedPack].reward > 0">
+                <p><strong>Points when completed:</strong> {{ packs[selectedPack].reward }}</p>
             </div>
 
-            <div class="meta-container">
-                <div class="meta">
-
-                    <div class="errors" v-show="errors.length > 0">
-                        <p class="error" v-for="error of errors">
-                            {{ error }}
-                        </p>
-                    </div>
-
-                    <div class="og">
-                        <p class="type-label-md">
-                            Website layout made by
-                            <a href="https://tsl.pages.dev/" target="_blank">
-                                TheShittyList
-                            </a>
-                        </p>
-                    </div>
-
-                    <template v-if="editors">
-                        <h3>List Editors</h3>
-                        <ol class="editors">
-                            <li v-for="editor in editors">
-                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" 
-                                     :alt="editor.role">
-                                <a v-if="editor.link"
-                                   target="_blank"
-                                   class="type-label-lg link"
-                                   :href="editor.link">
-                                   {{ editor.name }}
-                                </a>
-                                <p v-else>
-                                    {{ editor.name }}
-                                </p>
-                            </li>
-                        </ol>
-                    </template>
-
-                    <h3>Level Rules</h3>
-                    <p>The level has to be under 30 seconds.</p>
-                    <p>For a level to place, it must be harder than the level placed at #100.</p>
-                    <p>Anything using the Random Trigger must not affect the gameplay or visual difficulty.</p>
-                    <p>Copying parts from a level outside the GDPS is NOT allowed.</p>
-                    <p>Levels requiring more than 15 clicks per second are not allowed.</p>
-
-                    <h3>Submission Requirements</h3>
-                    <p>Video proof is required for Top 30 Challenges.</p>
-                    <p>Verifications must be uploaded in the format of a youtube video.</p>
-                    <p>Cheat indicator is required if a modmenu with the feature is being used.</p>
-                    <p>The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.</p>
-                    <p>Do not use major secret ways or bug routes.</p>
-                    <p>The recording must show the level complete screen.</p>
-                    <p>Click Between Frames and FPS/TPS bypass are allowed, however, Physics bypass is NOT allowed.</p>
-
-                </div>
+            <div class="pack-reward warning" v-else>
+                <p>This pack does not grant points<br>because it contains Legacy levels</p>
             </div>
-
-        </main>
+        </div>
+    </section>
+</main>
     `,
 
     data: () => ({
-        list: [],
-        filteredList: [],
-        editors: [],
         loading: true,
-        selected: 0,
-        searchQuery: "",
-        errors: [],
-        roleIconMap,
-        store,
-        toggledShowcase: false,
+        packs: [],
+        list: [],
+        selectedPack: 0,
     }),
 
-    computed: {
-        level() {
-            return this.list[this.selected]?.[0];
-        },
-
-        video() {
-            if (!this.level) return null;
-
-            if (this.toggledShowcase) {
-                if (
-                    this.level.showcase &&
-                    this.level.showcase.trim() !== "" &&
-                    this.level.showcase.trim() !== "#"
-                ) {
-                    return embed(this.level.showcase);
-                }
-                return null;
-            }
-
-            if (
-                this.level.verification &&
-                this.level.verification.trim() !== "" &&
-                this.level.verification.trim() !== "#"
-            ) {
-                return embed(this.level.verification);
-            }
-
-            return null;
-        }
-    },
-
-    watch: {
-        searchQuery() {
-            this.applyFilter();
-        }
-    },
-
     async mounted() {
-        this.list = await fetchList();
-        this.editors = await fetchEditors();
+        this.loading = true;
 
-        if (!this.list) {
-            this.errors = ["Failed to load list."];
+        this.list = await fetchList();
+        const packs = await fetchPacks();
+
+        if (!packs || packs.length === 0) {
+            console.error('No packs found.');
             this.loading = false;
             return;
         }
 
-        this.filteredList = this.list.map((entry, index) => ({
-            data: entry[0],
-            error: entry[1],
-            originalIndex: index
-        }));
+        this.packs = packs.map(pack => {
+            const levelObjects = pack.levels
+                .map(ref => {
+                    const entry = this.list.find(([lvl]) =>
+                        lvl.id === ref || lvl.name.toLowerCase() === String(ref).toLowerCase()
+                    );
+
+                    if (!entry) {
+                        console.warn(`Level not found in list: ${ref}`);
+                        return null;
+                    }
+
+                    const [lvl] = entry;
+                    return {
+                        name: lvl.name,
+                        rank: this.list.indexOf(entry) + 1,
+                        id: lvl.id,
+                        video: lvl.verification,
+                        thumbnail: getThumbnailFromId(getYoutubeIdFromUrl(lvl.verification)),
+                    };
+                })
+                .filter(Boolean);
+
+        levelObjects.sort((a, b) => a.rank - b.rank);
+
+            return {
+                ...pack,
+                levelObjects,
+            };
+        });
 
         this.loading = false;
+
+        this.$nextTick(() => {
+            const slider = document.querySelector('.packs-grid');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                document.body.classList.add('no-select');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+                document.body.classList.remove('no-select');
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+                document.body.classList.remove('no-select');
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1.2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
     },
 
     methods: {
-        embed,
-        score,
-        getRankColor,
-
-        applyFilter() {
-            const q = this.searchQuery.trim().toLowerCase();
-
-            if (!q) {
-                this.filteredList = this.list.map((entry, index) => ({
-                    data: entry[0],
-                    error: entry[1],
-                    originalIndex: index
-                }));
-                return;
-            }
-
-            const isNumberSearch = /^\d+$/.test(q);
-            const isHashSearch = /^#\d+$/.test(q);
-
-            let desiredExactIndex = null;
-
-            if (isHashSearch) {
-                desiredExactIndex = parseInt(q.slice(1), 10) - 1;
-            }
-
-            this.filteredList = this.list
-                .map((entry, index) => ({
-                    data: entry[0],
-                    error: entry[1],
-                    originalIndex: index
-                }))
-                .filter(item => {
-
-                    if (desiredExactIndex !== null) {
-                        return item.originalIndex === desiredExactIndex;
-                    }
-
-                    if (isNumberSearch) {
-                        const pos = (item.originalIndex + 1).toString();
-                        if (pos.includes(q)) return true;
-                    }
-
-                    return (
-                        item.data &&
-                        item.data.name.toLowerCase().includes(q)
-                    );
-                });
-        }
-    }
+        getThumbnailFromId,
+        getYoutubeIdFromUrl,
+    },
 };
