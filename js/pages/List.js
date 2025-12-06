@@ -163,7 +163,7 @@ export default {
 
                     <h2>Victors ({{ level.records?.length || 0 }})</h2>
 
-                    <p v-if="selected + 1 > 200">
+                    <p v-if="selected + 1 > 100">
                         This level has fallen into the Legacy List and no longer accepts new records.
                     </p>
 
