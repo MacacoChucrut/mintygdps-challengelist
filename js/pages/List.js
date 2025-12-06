@@ -56,13 +56,13 @@ export default {
                                 </td>
                             </tr>
 
-                            <tr v-if="item.originalIndex + 1 === 51" class="separator-row">
+                            <tr v-if="item.originalIndex + 1 === 101" class="separator-row">
                                 <td colspan="2">
                                     <div class="separator-text">EXTENDED</div>
                                 </td>
                             </tr>
 
-                            <tr v-if="item.originalIndex + 1 === 101" class="separator-row">
+                            <tr v-if="item.originalIndex + 1 === 201" class="separator-row">
                                 <td colspan="2">
                                     <div class="separator-text">LEGACY</div>
                                 </td>
@@ -71,7 +71,12 @@ export default {
                             <tr>
                                 <td class="rank">
                                     <p class="type-label-lg"
-                                       :style="{ color: getRankColor(item.originalIndex + 1) || 'inherit' }">
+                                       :style="{
+                                           color: getRankColor(item.originalIndex + 1) || 'inherit',
+                                           textShadow: getRankColor(item.originalIndex + 1)
+                                             ? '0 0 20px ' + getRankColor(item.originalIndex + 1)
+                                             : 'none'
+                                       }">
                                         #{{ item.originalIndex + 1 }}
                                     </p>
                                 </td>
@@ -158,7 +163,7 @@ export default {
 
                     <h2>Victors ({{ level.records?.length || 0 }})</h2>
 
-                    <p v-if="selected + 1 > 100">
+                    <p v-if="selected + 1 > 200">
                         This level has fallen into the Legacy List and no longer accepts new records.
                     </p>
 
@@ -208,7 +213,7 @@ export default {
                     </div>
 
                     <template v-if="editors">
-                        <h3>List Editors</h3>
+                        <a href="file_helper.html" target="_blank"><h3>List Editors</h3></a>
                         <ol class="editors">
                             <li v-for="editor in editors">
                                 <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" 
