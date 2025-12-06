@@ -56,13 +56,13 @@ export default {
                                 </td>
                             </tr>
 
-                            <tr v-if="item.originalIndex + 1 === 101" class="separator-row">
+                            <tr v-if="item.originalIndex + 1 === 51" class="separator-row">
                                 <td colspan="2">
                                     <div class="separator-text">EXTENDED</div>
                                 </td>
                             </tr>
 
-                            <tr v-if="item.originalIndex + 1 === 201" class="separator-row">
+                            <tr v-if="item.originalIndex + 1 === 101" class="separator-row">
                                 <td colspan="2">
                                     <div class="separator-text">LEGACY</div>
                                 </td>
