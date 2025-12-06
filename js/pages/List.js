@@ -235,7 +235,7 @@ export default {
                     <p>The level has to be under 30 seconds.</p>
                     <p>For a level to place, it must be harder than the level placed at #100.</p>
                     <p>Anything using the Random Trigger must not affect the gameplay or visual difficulty.</p>
-                    <p>Copying parts from a level outside the GDPS is NOT allowed.</p>
+                    <p>Copying parts from a level outside the GDPS is allowed as long as significant modifications are made to the gameplay or decoration. Direct copies or slightly edited versions are not allowed.</p>
                     <p>Levels requiring more than 15 clicks per second are not allowed.</p>
 
                     <h3>Submission Requirements</h3>
