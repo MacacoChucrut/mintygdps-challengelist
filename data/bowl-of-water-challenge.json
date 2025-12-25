@@ -18,7 +18,13 @@
             "link": "#",
             "percent": 100,
             "mobile": false
-        }
+        },
+        {
+  "user": "ForbidBasket",
+  "link": "",
+  "percent": 100,
+  "mobile": false
+}
     ],
     "tags": ["Wave", "Fast-Paced"]
 }
