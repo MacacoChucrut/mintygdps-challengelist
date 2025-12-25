@@ -42,7 +42,13 @@
             "link": "#",
             "percent": 100,
             "mobile": true
-        }
+        },
+        {
+  "user": "ForbidBasket",
+  "link": "",
+  "percent": 100,
+  "mobile": false
+}
     ],
     "tags": ["what the fuck is this"]
 }
