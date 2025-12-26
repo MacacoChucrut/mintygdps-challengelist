@@ -8,6 +8,13 @@
   "verification": "https://youtu.be/zvM8F0EVMp8",
   "showcase": "EMPTY",
   "percentToQualify": 100,
-  "records": [],
+  "records": [
+    {
+  "user": "Hcmaxi",
+  "link": "",
+  "percent": 100,
+  "mobile": false
+}
+  ],
   "tags": ["Wave", "Fast-Paced"]
 }
