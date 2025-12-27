@@ -8,6 +8,13 @@
   "verification": "https://youtu.be/o_W2HiUnwO8",
   "showcase": "EMPTY",
   "percentToQualify": 100,
-  "records": [],
+  "records": [
+    {
+  "user": "lolpanda",
+  "link": "",
+  "percent": 100,
+  "mobile": false
+}
+  ],
   "tags": ["Ship", "Timings", "Fast-Paced", "High CPS"]
 }
