@@ -239,7 +239,7 @@ export default {
                     <p>Levels requiring more than 15 clicks per second are not allowed.</p>
 
                     <h3>Submission Requirements</h3>
-                    <p>Video proof is required for Top 30 Challenges.</p>
+                    <p>Video proof is required for Top 40 Challenges.</p>
                     <p>Verifications must be uploaded in the format of a youtube video.</p>
                     <p>Cheat indicator is required if a modmenu with the feature is being used.</p>
                     <p>The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.</p>
