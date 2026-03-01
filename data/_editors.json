@@ -5,8 +5,13 @@
         "link": "https://www.youtube.com/@thesupersigma727"
     },
     {
-        "role": "admin",
+        "role": "owner",
         "name": "Hcmaxi",
         "link": "https://www.youtube.com/@HMaxiC"
+    },
+        {
+        "role": "admin",
+        "name": "lolpanda",
+        "link": "https://www.youtube.com/@lolpanda4626"
     }
 ]
