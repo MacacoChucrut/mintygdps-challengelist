@@ -2,13 +2,13 @@
     "id": 2328,
     "name": "horse challenge",
     "creators": ["yeeee"],
-    "verifier": "MacacoChucrut",
-    "verification": "https://youtu.be/TH2laTboOB8?feature=shared",
+    "verifier": "lolpanda",
+    "verification": "https://youtu.be/zCrJIv-PRbg",
     "percentToQualify": "100",
     "records": [
         {
-            "user": "lolpanda",
-            "link": "https://youtu.be/zCrJIv-PRbg",
+            "user": "MacacoChucrut",
+            "link": "https://youtu.be/TH2laTboOB8?feature=shared",
             "percent": 100,
             "mobile": false
         }
