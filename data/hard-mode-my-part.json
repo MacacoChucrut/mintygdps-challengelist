@@ -14,11 +14,11 @@
             "mobile": false
         },
         {
-  "user": "lolpanda",
-  "link": "",
-  "percent": 100,
-  "mobile": false
-}
+            "user": "lolpanda",
+            "link": "#",
+            "percent": 100,
+            "mobile": false
+        }
     ],
     "tags": ["UFO", "Timings"]
 }
