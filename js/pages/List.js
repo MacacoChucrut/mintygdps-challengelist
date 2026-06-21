@@ -238,7 +238,7 @@ export default {
                     <p>Copying parts from a level outside the GDPS is allowed as long as significant modifications are made to the gameplay or decoration. Direct copies or slightly edited versions are not allowed.</p>
 
                     <h3>Submission Requirements</h3>
-                    <p>Video proof is required for Top 40 Challenges.</p>
+                    <p>Video proof is required for Top 35 Challenges.</p>
                     <p>Verifications must be uploaded in the format of a youtube video.</p>
                     <p>Cheat indicator is required if a modmenu with the feature is being used.</p>
                     <p>The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.</p>
