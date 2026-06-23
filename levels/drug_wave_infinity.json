@@ -1,0 +1,17 @@
+{
+    "id": 4194,
+    "name": "drug wave infinity",
+    "creators": ["majin, Cyclic"],
+    "verifier": "majin",
+    "verification": "https://youtu.be/xaqQNCdt3wc",
+    "percentToQualify": "100",
+    "records": [
+        {
+            "user": "MacacoChucrut",
+            "link": "https://youtu.be/ARSWX2Hz49s",
+            "percent": 100,
+            "mobile": false
+        }
+    ],
+    "tags": ["Wave", "Fast-Paced"]
+}
