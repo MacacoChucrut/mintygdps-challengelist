@@ -1,5 +1,4 @@
-[
-    {
+{
         "name": "Easy Consistency Pack",
         "levels": ["bowl of water challenge", "bam", "lum1"],
         "color": "#0bd"
@@ -59,4 +58,18 @@
         "levels": ["I dont have money", "Syphon", "Back on track"],
         "color": "#67f"
     }
+
+[
+    "easy_consistency_pack",
+    "extreme_consistency_pack",
+    "gemstone_pack",
+    "hell_jumps_pack",
+    "herobrain_pack",
+    "hippopottamusphobia_pack",
+    "joke_pack",
+    "jonkler_trilogy",
+    "mop_pack",
+    "piss_pack",
+    "spam_pack",
+    "virek_pack"
 ]
