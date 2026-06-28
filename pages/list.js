@@ -230,6 +230,8 @@ export default {
 
                     <h3>Submission Requirements</h3>
                     <p>Video proof is required for Top 50 Demons.</p>
+                    <p>Your video must have clicks fully audible throughout the entire completion.</p>
+                    <p>Click sound mods and clickbots will not be allowed.</p>
                     <p>Verifications must be uploaded onto a video sharing platform.</p>
                     <p>Cheat indicator is required if a modmenu with that feature is used.</p>
                     <p>Secret routes or bug routes are not allowed.</p>
