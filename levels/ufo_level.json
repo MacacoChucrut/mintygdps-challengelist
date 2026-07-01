@@ -7,6 +7,12 @@
   "verifier": "BoykisserShadow",
   "verification": "",
   "showcase": "EMPTY",
-  "records": [],
+  "records": [
+    {
+  "user": "hcmaxi",
+  "link": "",
+  "percent": 100
+}
+  ],
   "tags": ["Spam", "Ufo"]
 }
